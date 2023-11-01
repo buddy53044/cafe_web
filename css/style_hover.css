@@ -1,0 +1,71 @@
+.nav-text-2,
+.nav-text-4,
+.nav-text,
+.home-wrapper,
+.div-wrapper,
+.nav-text-login,
+.logo,
+.main-btn,
+.main-btn-2,
+.text-wrapper-9,
+.text-wrapper-10,
+.two-btn,
+.join{
+    cursor: pointer;
+}
+
+.index .text-wrapper-2:hover,
+.index .home-3:hover,
+.index .home:hover,
+.index .text-wrapper:hover,
+.index .home-2:hover{
+    color: #60695D;
+}
+
+
+.nav-text-login:hover{
+    .text-wrapper-3{
+        color: #5F695E;
+    }
+}
+
+.index .main-btn,
+.index .main-btn-2{
+    transition: background-color 0.5s; 
+}
+
+.main-btn:hover,
+.main-btn-2:hover{
+    background-color: #5F695E;
+}
+
+.index .text-wrapper-9:hover,
+.index .text-wrapper-10:hover{
+    color: #A3ADA2;
+}
+
+.index .two-btn:hover {
+    background-color: #5F695E;
+    .text-wrapper-11{
+        color: #ffffff;
+    }
+}
+
+.join:hover{
+    background-color: #5F695E;
+}
+
+
+.index .rectangle {
+    transition: background-color 0.5s; 
+  }
+
+.index .rectangle:hover {
+    background-color: #667163; 
+}
+
+.index .rectangle input:focus {
+    outline: 1px solid #ffffff;
+}
+
+
