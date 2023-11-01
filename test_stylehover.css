@@ -8,22 +8,39 @@
 .main-btn,
 .main-btn-2,
 .text-wrapper-9,
-.text-wrapper-10,
 .two-btn,
 .join{
     cursor: pointer;
 }
 
-.index .text-wrapper-2:hover,
-.index .home-3:hover,
-.index .home:hover,
-.index .text-wrapper:hover,
-.index .home-2:hover{
+
+.nav-text-2:hover,
+.nav-text-4:hover,
+.nav-text:hover,
+.home-wrapper:hover,
+.div-wrapper:hover{
+    .text-wrapper-2,
+    .home-3,
+    .home,
+    .text-wrapper,
+    .home-2{
     color: #60695D;
+    }
 }
 
-.index .nav-text-login:hover{
-    color: red;
+/* .text-wrapper-2:hover,
+.home-3:hover,
+.home:hover,
+.text-wrapper:hover,
+.home-2:hover{
+    color: #60695D;
+} */
+
+
+.nav-text-login:hover{
+    .text-wrapper-3{
+        color: #5F695E;
+    }
 }
 
 .index .main-btn,
@@ -36,32 +53,40 @@
     background-color: #5F695E;
 }
 
-.index .text-wrapper-9:hover,
-.index .text-wrapper-10:hover{
+.index .text-wrapper-9:hover{
     color: #A3ADA2;
+}
+
+.index .two-btn{
+    transition: background-color 0.5s; 
+
 }
 
 .index .two-btn:hover {
     background-color: #5F695E;
-    .text-wrapper-11{
+    .text-wrapper-10{
         color: #ffffff;
     }
 }
 
-.join:hover{
+.index .join{
+    transition: background-color 0.5s; 
+}
+
+.index .join:hover{
     background-color: #5F695E;
 }
 
 
-.index .rectangle {
+.index .input-email {
     transition: background-color 0.5s; 
   }
 
-.index .rectangle:hover {
+.index .input-email:hover {
     background-color: #667163; 
 }
 
-.index .rectangle input:focus {
+.index .input-email input:focus {
     outline: 1px solid #ffffff;
 }
 
