@@ -3,9 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Our Menu</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .menu-section { display: flex; flex-wrap: wrap; }
+        .menu-item { width: 33.33%; padding: 20px; box-sizing: border-box; }
+        .menu-item img { width: 100%; height: auto; }
+        .menu-item .item-description { text-align: center; margin-top: 10px; }
+        .menu-item .item-name { font-weight: bold; }
+        .menu-item .item-price { color: gray; }
+    </style>
 </head>
 <body>
-    <p>menu</p>
+
+<h1>Our Menu</h1>
+<p>Enjoy fresh, delicious food with us. Our menu is here for you to explore and enjoy!</p>
+
+<h2>All Day Every Day</h2>
+
+<div class="menu-section">
+    <!-- Example for one item -->
+    <div class="menu-item">
+        <img src="path/to/your/image.jpg" alt="Item Name">
+        <div class="item-description">
+            <span class="item-name">Item Name</span><br>
+            <span class="item-detail">Item details go here...</span><br>
+            <span class="item-price">$Price</span>
+        </div>
+    </div>
+    <!-- Repeat similar blocks for other items -->
+</div>
+
+<!-- You can add more sections for "All Day Breakfast", "Drinks", etc. similar to above -->
+
 </body>
 </html>
