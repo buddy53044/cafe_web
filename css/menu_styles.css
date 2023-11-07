@@ -15,6 +15,14 @@ header {
   /* 顶部导航样式 */
 }
 
+footer {
+  background-color: transparent;
+  /* background: #f4f4f4;
+  padding: 20px;
+  text-align: center; */
+}
+
+
 main {
   width: 80%;
   margin: auto;
@@ -59,12 +67,6 @@ h1 {
 .price {
   font-weight: bold;
   color: green;
-}
-
-footer {
-  background: #f4f4f4;
-  padding: 20px;
-  text-align: center;
 }
 
 @media (max-width: 768px) {

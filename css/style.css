@@ -31,7 +31,7 @@
   object-fit: cover;
 }
 
-.index .nav {
+.nav {
   position: absolute;
   width: 1903px;
   height: 90px;
@@ -40,7 +40,7 @@
   background-color: #f7e5d1;
 }
 
-.index .nav-text {
+.nav-text {
   position: absolute;
   width: 69px;
   height: 38px;
@@ -48,7 +48,7 @@
   left: 1450px;
 }
 
-.index .home {
+.home {
   left: 16px;
   position: absolute;
   height: 17px;
@@ -62,7 +62,7 @@
   line-height: normal;
 }
 
-.index .home-wrapper {
+.home-wrapper {
   position: absolute;
   width: 96px;
   height: 38px;
@@ -70,7 +70,7 @@
   left: 1549px;
 }
 
-.index .text-wrapper {
+.text-wrapper {
   left: 6px;
   position: absolute;
   height: 17px;
@@ -84,7 +84,7 @@
   line-height: normal;
 }
 
-.index .div-wrapper {
+.div-wrapper {
   position: absolute;
   width: 83px;
   height: 38px;
@@ -92,7 +92,7 @@
   left: 1675px;
 }
 
-.index .home-2 {
+.home-2 {
   left: 4px;
   position: absolute;
   height: 17px;
@@ -106,7 +106,7 @@
   line-height: normal;
 }
 
-.index .nav-text-2 {
+.nav-text-2 {
   position: absolute;
   width: 69px;
   height: 38px;
@@ -114,7 +114,7 @@
   left: 1252px;
 }
 
-.index .text-wrapper-2 {
+.text-wrapper-2 {
   height: 17px;
   top: 10px;
   left: 14px;
@@ -128,7 +128,7 @@
   line-height: normal;
 }
 
-.index .nav-text-login {
+.nav-text-login {
   position: absolute;
   width: 119px;
   height: 45px;
@@ -136,7 +136,7 @@
   left: 1788px;
 }
 
-.index .login {
+.login {
   position: absolute;
   width: 45px;
   height: 43px;
@@ -145,7 +145,7 @@
   object-fit: cover;
 }
 
-.index .nav-text-3 {
+.nav-text-3 {
   position: absolute;
   width: 74px;
   height: 45px;
@@ -153,7 +153,7 @@
   left: 40px;
 }
 
-.index .text-wrapper-3 {
+.text-wrapper-3 {
   position: absolute;
   width: 74px;
   height: 13px;
@@ -169,7 +169,7 @@
   white-space: nowrap;
 }
 
-.index .nav-text-4 {
+.nav-text-4 {
   position: absolute;
   width: 69px;
   height: 38px;
@@ -177,7 +177,7 @@
   left: 1351px;
 }
 
-.index .home-3 {
+.home-3 {
   left: 3px;
   position: absolute;
   height: 17px;
@@ -265,7 +265,7 @@
   white-space: nowrap;
 }
 
-.index .logo {
+.logo {
   position: absolute;
   width: 81px;
   height: 58px;
@@ -273,13 +273,13 @@
   left: 21px;
 }
 
-.index .overlap-group {
+.overlap-group {
   position: relative;
   height: 48px;
   top: -1px;
 }
 
-.index .text-wrapper-5 {
+.text-wrapper-5 {
   width: 52px;
   top: 16px;
   left: 29px;
@@ -292,7 +292,7 @@
   line-height: normal;
 }
 
-.index .text-wrapper-6 {
+.text-wrapper-6 {
   position: absolute;
   top: 0;
   left: 0;
@@ -305,7 +305,7 @@
   white-space: nowrap;
 }
 
-.index .text-wrapper-7 {
+.text-wrapper-7 {
   position: absolute;
   top: 0;
   left: 29px;
@@ -318,7 +318,7 @@
   white-space: nowrap;
 }
 
-.index .overlap-2 {
+.overlap-2 {
   position: absolute;
   width: 1903px;
   height: 32px;
@@ -327,7 +327,7 @@
   background-color: #f7e5d1;
 }
 
-.index .text-wrapper-8 {
+.text-wrapper-8 {
   position: absolute;
   top: 6px;
   left: 902px;
@@ -670,7 +670,7 @@
   object-fit: cover;
 }
 
-.index .overlap-6 {
+.overlap-6 {
   position: absolute;
   width: 1903px;
   height: 415px;
@@ -679,7 +679,7 @@
   background-color: #404d3c;
 }
 
-.index .text-wrapper-17 {
+.text-wrapper-17 {
   position: absolute;
   top: 109px;
   left: 290px;
@@ -692,7 +692,7 @@
   line-height: normal;
 }
 
-.index .text-wrapper-18 {
+.text-wrapper-18 {
   position: absolute;
   top: 109px;
   left: 1435px;
@@ -705,7 +705,7 @@
   line-height: normal;
 }
 
-.index .text-wrapper-19 {
+.text-wrapper-19 {
   position: absolute;
   top: 189px;
   left: 290px;
@@ -721,7 +721,7 @@
 
 
 
-.index .input-email {
+.input-email {
   position: absolute;
   width: 212px;
   height: 41px;
@@ -739,7 +739,7 @@
 
 }
 
-.index .input-email input {
+.input-email input {
   width: 100%;
   height: 100%;
   border: none;
@@ -751,7 +751,7 @@
   font-size: 14px;
 }
 
-.index .join {
+.join {
   position: absolute;
   width: 94px;
   height: 41px;
@@ -761,7 +761,7 @@
   border-color: #ffffff;
 }
 
-.index .text-wrapper-20 {
+.text-wrapper-20 {
   position: absolute;
   top: 9px;
   left: 30px;
@@ -775,7 +775,7 @@
   white-space: nowrap;
 }
 
-.index .text-wrapper-21 {
+.text-wrapper-21 {
   position: absolute;
   top: 189px;
   left: 1435px;
@@ -789,7 +789,7 @@
   white-space: nowrap;
 }
 
-.index .text-wrapper-22 {
+.text-wrapper-22 {
   position: absolute;
   top: 217px;
   left: 1435px;
@@ -803,7 +803,7 @@
   white-space: nowrap;
 }
 
-.index .text-wrapper-23 {
+.text-wrapper-23 {
   top: 274px;
   left: 1435px;
   color: #ffffff;
@@ -817,7 +817,7 @@
   line-height: normal;
 }
 
-.index .text-wrapper-24 {
+.text-wrapper-24 {
   position: absolute;
   top: 247px;
   left: 290px;
@@ -829,3 +829,4 @@
   line-height: normal;
   white-space: nowrap;
 }
+
