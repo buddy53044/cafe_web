@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
+ <link rel="stylesheet" href="css/globals.css" >
+ <link rel="stylesheet" href="css/style.css" >
+ <link rel="stylesheet" href="css/style_hover.css" >
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- <script src="node_modules/jquery/dist/jquery.min.js"></script> -->
+    <script type="text/javascript" src="js/location.js"></script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>我们的菜单</title>
@@ -8,7 +16,36 @@
 </head>
 <body>
 <header>
-  <!-- 顶部导航代码放这里 -->
+  <div class="nav-text-2"><div class="text-wrapper-2">Home</div></div>
+            <div class="nav-text-4"><div class="home-3">About Us</div></div>
+            <div class="nav-text"><div class="home">Menu</div></div>
+            <div class="home-wrapper"><div class="text-wrapper">Online Order</div></div>
+            <div class="div-wrapper"><div class="home-2">Contact Us</div></div>
+            <div class="nav-text-login">
+              <img class="login" src="img/login-1.png" />
+              <div class="nav-text-3"><div class="text-wrapper-3">Log In</div></div>
+            </div>
+
+            <div class="cafe-restaurant">Cafe&amp;Restaurant</div>
+            <div class="delicious-eat-coffee">Delicious Eat&amp;Coffee</div>
+            <div class="main-btn-2"><div class="text-wrapper-4">Order now</div></div>
+            <div class="main-btn"><div class="order-now">Our Menu</div></div>
+
+            <div class="overlap-3">
+              <div class="weekend-brunch">
+                <p class="weekdays-deal-coffee">Weekdays Deal&nbsp;&nbsp; |&nbsp;&nbsp; Coffee &amp; Pastry 90%off</p>
+              </div>
+              <div class="div-wrapper-2"><div class="text-wrapper-9">&gt;</div></div>
+              <div class="div-wrapper-3"><div class="text-wrapper-9">&lt;</div></div>
+            </div>
+
+            <div class="logo">
+              <div class="overlap-group">
+                <div class="text-wrapper-5">cafe</div>
+                <div class="text-wrapper-6">109</div>
+                <div class="text-wrapper-7">ntut</div>
+              </div>
+            </div>
 </header>
 
 <main>
@@ -21,15 +58,93 @@
       <!-- 单个菜单项 -->
       <div class="menu-item">
         <img src="img/menu/Croissant.jpg" alt="羊角面包">
-        <h3>羊角面包</h3>
-        <p>美味的经典法式糕点，选择原味或巧克力。</p>
+        <h3>Croissant</h3>
+        <p>Croissant</p>
         <span class="price">$5</span>
+      </div>
+      <div class="menu-item">
+        <img src="img/menu/Daily Muffin.jpg" alt="馬芬蛋糕">
+        <h3>Daily Muffin</h3>
+        <p>Daily Muffin</p>
+        <span class="price">$5</span>
+      </div>
+      <div class="menu-item">
+        <img src="img/menu/Cheesecake.jpg" alt="起司蛋糕">
+        <h3>Cheesecake</h3>
+        <p>Cheesecake</p>
+        <span class="price">$5</span>
+      </div>
+      <div class="menu-item">
+        <img src="img/menu/Granola & Greek Yogurt.jpg" alt="優格">
+        <h3>Granola & Greek Yogurt</h3>
+        <p>Granola & Greek Yogurt</p>
+        <span class="price">$5</span>
+      </div>
+      <div class="menu-item">
+        <img src="img/menu/Chia Pudding.jpg" alt="布丁">
+        <h3>Chia Pudding</h3>
+        <p>Chia Pudding</p>
+        <span class="price">$5</span>
+      </div>
+      <div class="menu-item">
+        <img src="img/menu/Superfood Acai Bowl.jpg" alt="水果碗">
+        <h3>Superfood Acai Bowl</h3>
+        <p>Superfood Acai Bowl</p>
+        <span class="price">$5</span>
+      </div>
+      <div class="menu-item">
+        <img src="img/menu/Avocado Toast.jpg" alt="酪梨吐司">
+        <h3>酪梨吐司</h3>
+        <p>Avocado Toast</p>
+        <span class="price">$8</span>
+      </div>
+      <div class="menu-item">
+        <img src="img/menu/Eggs Benedict.jpg" alt="班尼迪克蛋">
+        <h3>Eggs Benedict</h3>
+        <p>Eggs Benedict</p>
+        <span class="price">$8</span>
+      </div>
+      <div class="menu-item">
+        <img src="img/menu/Bacon & Eggs on Rye.jpg" alt="培根&蛋">
+        <h3>Bacon & Eggs on Rye</h3>
+        <p>Bacon & Eggs on Rye</p>
+        <span class="price">$8</span>
+      </div>
+      <div class="menu-item">
+        <img src="img/menu/Salmon Brioche.jpg" alt="Salmon Brioche">
+        <h3>Salmon Brioche</h3>
+        <p>Salmon Brioche</p>
+        <span class="price">$8</span>
+      </div>
+      <div class="menu-item">
+        <img src="img/menu/Smoked Salmon Bagel.jpg" alt="Smoked Salmon Bagel">
+        <h3>Smoked Salmon Bagel</h3>
+        <p>Smoked Salmon Bagel</p>
+        <span class="price">$8</span>
+      </div>
+      <div class="menu-item">
+        <img src="img/menu/Waffle.jpg" alt="Waffle">
+        <h3>Waffle</h3>
+        <p>Waffle</p>
+        <span class="price">$8</span>
+      </div>
+      <div class="menu-item">
+        <img src="img/menu/latté.jpg" alt="latte">
+        <h3>latte</h3>
+        <p>latte</p>
+        <span class="price">$12</span>
       </div>
       <div class="menu-item">
         <img src="img/menu/Americano.jpg" alt="美式咖啡">
         <h3>美式咖啡</h3>
         <p>咖啡</p>
-        <span class="price">$8</span>
+        <span class="price">$12</span>
+      </div>
+      <div class="menu-item">
+        <img src="img/menu/pour over coffee.jpg" alt="美式咖啡">
+        <h3pour over coffee</h3>
+        <p>pour over coffee</p>
+        <span class="price">$12</span>
       </div>
       <!-- 其他菜单项 -->
     </div>
@@ -40,7 +155,21 @@
 </main>
 
 <footer>
-  <!-- 页脚信息放这里 -->
+  <div class="overlap-6">
+          <div class="text-wrapper-17">Newsletter</div>
+          <p class="text-wrapper-19">Stay up to date with all the latest from cafe</p>
+          <div class="text-wrapper-24">Email</div>
+          <div class="input-email">
+            <input type="email" placeholder="Enter your email">
+          </div>          
+          <div class="join"><div class="text-wrapper-20">Join</div></div>
+          <div class="text-wrapper-18">Talk to Us</div>
+          <div class="text-wrapper-21">Tel: 0965580712</div>
+          <div class="text-wrapper-22">t109360213@ntut.org.tw</div>
+          <div class="text-wrapper-23">106344 台北市忠孝東路三段一號</div>
+        </div>
+        <div class="overlap-2"><div class="text-wrapper-8">@2023 by jack</div></div>
+
 </footer>
 </body>
 </html>
