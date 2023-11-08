@@ -83,8 +83,8 @@ footer {
   }
 }
 .menu-item img {
-  width: 200px; /* 固定圖片寬度 */
-  height: 150px; /* 固定圖片高度 */
+  width: 400px; /* 固定圖片寬度 */
+  height: 300px; /* 固定圖片高度 */
   object-fit: cover; /* 裁剪而不是拉伸圖片以適應尺寸 */
   border-radius: 4px; /* 圖片邊角的圓滑程度 */
   margin-bottom: 10px; /* 圖片和下方元素之間的距離 */
