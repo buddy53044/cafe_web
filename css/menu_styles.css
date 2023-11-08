@@ -1,86 +1,37 @@
-/* 基础重置 */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* style.css */
 body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  color: #333;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-header {
-  /* 顶部导航样式 */
+header, main, footer {
+    padding: 20px;
 }
 
-footer {
-  background-color: transparent;
-  /* background: #f4f4f4;
-  padding: 20px;
-  text-align: center; */
-}
-
-
-main {
-  width: 80%;
-  margin: auto;
-  padding-top: 20px;
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 40px;
+h1, h2 {
+    color: #333;
 }
 
 .menu-category {
-  margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .menu-items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .menu-item {
-  flex-basis: 30%;
-  margin-bottom: 20px;
+    width: 200px;
+    margin: 15px;
+    text-align: center;
 }
 
 .menu-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
+    width: 100%;
+    height: auto;
 }
 
-.menu-item h3 {
-  margin-top: 10px;
-}
-
-.menu-item p {
-  font-size: 0.9em;
-  margin-bottom: 5px;
-}
-
-.price {
-  font-weight: bold;
-  color: green;
-}
-
-@media (max-width: 768px) {
-  .menu-items {
-    justify-content: center;
-  }
-
-  .menu-item {
-    flex-basis: 45%;
-  }
-}
-
-@media (max-width: 480px) {
-  .menu-item {
-    flex-basis: 90%;
-  }
-}
+/* Add more styles for responsive design, typography, colors, etc. */
