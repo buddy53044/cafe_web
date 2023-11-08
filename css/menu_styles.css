@@ -1,37 +1,106 @@
-/* style.css */
+/* CSS reset to ensure cross-browser compatibility */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif; /* Example font */
 }
 
-header, main, footer {
-    padding: 20px;
+/* Container for the menu items */
+.menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-h1, h2 {
-    color: #333;
-}
-
-.menu-category {
-    margin-bottom: 40px;
-}
-
-.menu-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
+/* Individual item styles */
 .menu-item {
-    width: 200px;
-    margin: 15px;
-    text-align: center;
+  flex-basis: 20%; /* Adjust the width of the items */
+  margin: 10px;
+  text-align: center;
 }
 
+/* Responsive grid adjustments */
+@media (max-width: 1200px) {
+  .menu-item {
+    flex-basis: 25%; /* 4 items per row */
+  }
+}
+
+@media (max-width: 992px) {
+  .menu-item {
+    flex-basis: 33.3333%; /* 3 items per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-item {
+    flex-basis: 50%; /* 2 items per row */
+  }
+}
+
+@media (max-width: 576px) {
+  .menu-item {
+    flex-basis: 100%; /* 1 item per row */
+  }
+}
+
+/* Image styling */
 .menu-item img {
-    width: 100%;
-    height: auto;
+  width: 100%; /* Make images full width of the container */
+  height: auto; /* Keep the original aspect ratio */
+  margin-bottom: 10px;
 }
 
-/* Add more styles for responsive design, typography, colors, etc. */
+/* Item description styling */
+.description {
+  margin-bottom: 10px;
+}
+
+/* Price styling */
+.price {
+  font-weight: bold;
+}
+
+/* Ensuring images stay the same size regardless of content */
+.menu-item img {
+  height: 150px; /* Fixed height */
+  object-fit: cover; /* Crop images to fill the fixed size */
+}
+
+/* Adding some visual enhancements */
+.menu-item {
+  border: 1px solid #ccc; /* Light grey border */
+  padding: 10px;
+  border-radius: 4px; /* Slightly rounded corners */
+  background: #f9f9f9; /* Light grey background */
+}
+
+/* Typography adjustments */
+h2 {
+  text-align: center;
+  color: #333; /* Dark grey color for text */
+}
+
+/* Styling for categories */
+.category-title {
+  text-align: center;
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+/* Footer styles */
+.footer {
+  background: #333; /* Dark background for the footer */
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
