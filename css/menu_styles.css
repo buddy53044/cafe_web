@@ -1,106 +1,91 @@
-/* CSS reset to ensure cross-browser compatibility */
-html {
+/* 基础重置 */
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
 body {
-  margin: 0;
-  font-family: 'Open Sans', sans-serif; /* Example font */
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
 }
 
-/* Container for the menu items */
-.menu-container {
+header {
+  /* 顶部导航样式 */
+}
+
+main {
+  width: 80%;
+  margin: auto;
+  padding-top: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.menu-category {
+  margin-bottom: 50px;
+}
+
+.menu-items {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 0 auto;
-  padding: 20px;
+  justify-content: space-between;
 }
 
-/* Individual item styles */
 .menu-item {
-  flex-basis: 20%; /* Adjust the width of the items */
-  margin: 10px;
+  flex-basis: 30%;
+  margin-bottom: 20px;
+}
+
+.menu-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.menu-item h3 {
+  margin-top: 10px;
+}
+
+.menu-item p {
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+
+.price {
+  font-weight: bold;
+  color: green;
+}
+
+footer {
+  background: #f4f4f4;
+  padding: 20px;
   text-align: center;
-}
-
-/* Responsive grid adjustments */
-@media (max-width: 1200px) {
-  .menu-item {
-    flex-basis: 25%; /* 4 items per row */
-  }
-}
-
-@media (max-width: 992px) {
-  .menu-item {
-    flex-basis: 33.3333%; /* 3 items per row */
-  }
 }
 
 @media (max-width: 768px) {
+  .menu-items {
+    justify-content: center;
+  }
+
   .menu-item {
-    flex-basis: 50%; /* 2 items per row */
+    flex-basis: 45%;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 480px) {
   .menu-item {
-    flex-basis: 100%; /* 1 item per row */
+    flex-basis: 90%;
   }
 }
-
-/* Image styling */
 .menu-item img {
-  width: 100%; /* Make images full width of the container */
-  height: auto; /* Keep the original aspect ratio */
-  margin-bottom: 10px;
-}
-
-/* Item description styling */
-.description {
-  margin-bottom: 10px;
-}
-
-/* Price styling */
-.price {
-  font-weight: bold;
-}
-
-/* Ensuring images stay the same size regardless of content */
-.menu-item img {
-  height: 150px; /* Fixed height */
-  object-fit: cover; /* Crop images to fill the fixed size */
-}
-
-/* Adding some visual enhancements */
-.menu-item {
-  border: 1px solid #ccc; /* Light grey border */
-  padding: 10px;
-  border-radius: 4px; /* Slightly rounded corners */
-  background: #f9f9f9; /* Light grey background */
-}
-
-/* Typography adjustments */
-h2 {
-  text-align: center;
-  color: #333; /* Dark grey color for text */
-}
-
-/* Styling for categories */
-.category-title {
-  text-align: center;
-  font-size: 1.5em;
-  margin-top: 20px;
-}
-
-/* Footer styles */
-.footer {
-  background: #333; /* Dark background for the footer */
-  color: white;
-  text-align: center;
-  padding: 20px 0;
+  width: 200px; /* 固定圖片寬度 */
+  height: 150px; /* 固定圖片高度 */
+  object-fit: cover; /* 裁剪而不是拉伸圖片以適應尺寸 */
+  border-radius: 4px; /* 圖片邊角的圓滑程度 */
+  margin-bottom: 10px; /* 圖片和下方元素之間的距離 */
 }
