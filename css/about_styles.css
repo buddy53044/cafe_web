@@ -1,0 +1,106 @@
+.navbar{
+    background-color: #f7e5d1;
+}
+
+.navbar-logo {
+    width: 43px; /* 或您想要的任何尺寸 */
+    height: 43px; /* 使其與寬度相同以獲得一個完美的圓形 */
+    border-radius: 50%; /* 這將使圖片成為圓形 */
+    object-fit: cover; /* 這將確保圖片覆蓋整個區域並保持它的比例 */
+    border: 2px solid #fff; /* 可選，如果您想要一個邊框 */
+  }
+  
+
+.navbar-brand {
+padding: 1rem; /* 增加左側填充 */
+}
+  
+.nav-item{
+margin: auto 15px;
+}
+
+  /* 基础样式: 所有屏幕尺寸 */
+.navbar-nav .nav-item .nav-link {
+    text-align: left; /* 默认左对齐 */
+}
+
+
+.banner1-about-us{
+    width: 100%;
+    background-color: #fbf3e8;
+}
+
+.banner1-about-us .col{
+    margin: 69px auto;
+    }
+
+.banner1-about-us .p{
+    margin-top: 20px ;
+    }
+
+.img{
+    /* object-fit: cover; */
+    /* width: 100%; */
+}
+
+.banner2-real{
+    background-color: #5F695E;
+    margin: 75px ;
+    padding: 70px;
+}
+
+.footer1{
+    background-color: #404D3C;
+    font-size: 16px;
+}
+
+.join{
+    font-size: 16px !important;
+}
+
+.input-email{
+    background: transparent !important;
+    color: #fff !important; /* 更改字体颜色为您想要的颜色 */
+    font-size: 16px !important; /* 设置字体大小 */
+
+}
+
+/* style="padding:100px;" */
+/* style="font-size: 16px;" */
+  
+  @media (max-width: 767.98px) { /* Bootstrap 5 'md'断点的上一个像素 */
+    body{
+        font-size: 16px;
+    }
+    .navbar-nav .nav-item {
+      display: flex;
+      justify-content: center;
+    }
+    .navbar-nav .nav-item .nav-link {
+      text-align: center; /* 在小屏幕设备上使文本居中 */
+    }
+
+    .banner1-about-us .col{
+        margin: 30px auto;
+        }
+
+    .group1-bestbite{
+        margin: 20px auto;
+    }
+
+    .view-menu{
+        margin-bottom: 20px;
+    }
+  }
+  
+
+@media (max-width: 991.98px) { /* 這是Bootstrap 5中的 'lg' 斷點的上一個像素 */
+    .navbar-nav .nav-item {
+        display: flex;
+        justify-content: center;
+      }
+      .navbar-nav .nav-item .nav-link {
+        text-align: center; /* 在小屏幕设备上使文本居中 */
+      }
+  }
+  

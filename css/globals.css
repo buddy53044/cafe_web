@@ -7,7 +7,31 @@ html,
 body {
   margin: 0px;
   height: 100%;
+  margin-top:69px;
+  padding: 0px;
+  font-size: 20px;
+  
 }
+h1{
+  line-height: 2;
+  font-family: "Inter-Regular", Helvetica, sans-serif;
+}
+
+p{
+  line-height: 2;
+  font-family: "Inter-Regular", Helvetica, sans-serif;
+
+
+}
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.white{
+  color: #fff;
+}
+
 /* a blue color as a generic focus style */
 button:focus-visible {
   outline: 2px solid #4a90e2 !important;
