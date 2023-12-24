@@ -58,6 +58,11 @@ margin: auto 15px;
   text-align: left; /* 默认左对齐 */
 }
 
+.banner1-title{
+  width: 100%;
+  background-color: #fbf3e8;
+}
+
 .footer1{
   background-color: #404D3C;
   font-size: 16px;
