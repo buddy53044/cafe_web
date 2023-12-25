@@ -81,4 +81,16 @@
     outline: 1px solid #ffffff;
 }
 
+.menu-item:hover {
+    background-color: #f0f0f0; /* 悬停时的背景颜色 */
+    cursor: pointer; /* 将鼠标光标变为手型，表示可点击 */
+}
+
+.menu-item h3:hover {
+    color: #ff0000; /* 悬停时标题的颜色 */
+}
+
+.menu-item p:hover {
+    font-weight: bold; /* 悬停时描述文字加粗 */
+}
 
