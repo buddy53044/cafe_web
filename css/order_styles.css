@@ -14,6 +14,14 @@
     color: #d9d9d9 !important;
   }
 
+.editcolor{
+  color: #60695D !important;
+}
+.editcolor:hover{
+  opacity: 70% !important;
+}
+
+
 
 
 .order-img{
@@ -40,18 +48,19 @@
   } */
 
   @media (max-width: 767.98px) { /* Bootstrap 5 'md'断点的上一个像素 */
-
+    .modal-dialog-right {
+      position: absolute;
+      right: 0!important; /* 對齊到右邊 */
+      margin-right: 0 !important;
+      top: 50%!important; /* 垂直置中 */
+      transform: translateY(-50%)!important; /* 垂直置中的微調 */
+      background-color: red !important; /* 只是為了標示位置，可以移除 */
+    }
   }
   
   
   @media (max-width: 991.98px) { /* 這是Bootstrap 5中的 'lg' 斷點的上一個像素 */
-    .modal-dialog-right {
-        position: absolute;
-        right: 0!important; /* 對齊到右邊 */
-        margin-right: 0 !important;
-        top: 50%!important; /* 垂直置中 */
-        transform: translateY(-50%)!important; /* 垂直置中的微調 */
-        background-color: red !important; /* 只是為了標示位置，可以移除 */
-      }
+
   }
+
   
