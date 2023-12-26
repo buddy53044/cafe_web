@@ -32,6 +32,11 @@ p{
   color: #fff;
 }
 
+.btn-green{
+  background-color: #404D3C !important;
+  border-color: #404D3C !important;
+}
+
 .navbar{
   background-color: #f7e5d1;
 }
@@ -83,6 +88,8 @@ margin: auto 15px;
   font-size: 16px !important; /* 设置字体大小 */
 
 }
+
+
 
 
 @media (max-width: 767.98px) { /* Bootstrap 5 'md'断点的上一个像素 */
