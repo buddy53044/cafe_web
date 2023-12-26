@@ -1,46 +1,307 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>我们的菜单</title>
-<link rel="stylesheet" href="css/menu_styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="css/globals.css" />
+  <link rel="stylesheet" href="css/menu_styles.css" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <title>Navbar</title>
 </head>
 <body>
-<header>
-  <!-- 顶部导航代码放这里 -->
-</header>
 
-<main>
-  <h1>我们的菜单</h1>
-
-  <!-- 菜单项区域 -->
-  <section class="menu-category">
-    <h2>全天候供应</h2>
-    <div class="menu-items">
-      <!-- 单个菜单项 -->
-      <div class="menu-item">
-        <img src="img/menu/Croissant.jpg" alt="羊角面包">
-        <h3>羊角面包</h3>
-        <p>美味的经典法式糕点，选择原味或巧克力。</p>
-        <span class="price">$5</span>
+  <!-- header -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <div class="d-flex align-items-center">
+          <img class="navbar-logo" src="img/logo.png" alt="Logo" />
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/menu.html">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/order.html">Online Order</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login.html">Log In</a>
+          </li>
+        </ul>
+        <!-- <div class="d-flex">
+            <img class="login-icon" src="img/login-1.png" alt="Log In" />
+            <a class="nav-link" href="#">Log In</a>
+        </div> -->
       </div>
-      <div class="menu-item">
-        <img src="img/menu/Americano.jpg" alt="美式咖啡">
-        <h3>美式咖啡</h3>
-        <p>咖啡</p>
-        <span class="price">$8</span>
-      </div>
-      <!-- 其他菜单项 -->
     </div>
-  </section>
+  </nav>
 
-  <!-- 更多类似的菜单项区域 -->
+  <!-- header -->
 
-</main>
+  <div class="container-fluid banner1-title py-5 ">
+    <div class="row">
+      <div class="col text-center">
+        <h1 >Our Menu</h1>
+        <p>
+          I'm a paragraph. Click here to add your own text and edit<br />
+          Let your users get to know you.
+        </p>
+      </div>
+    </div>
+  </div>
 
-<footer>
-  <!-- 页脚信息放这里 -->
-</footer>
+  <div class="container-fluid text-center my-4">
+
+    <h3 class="">All Day Every Day</h3>
+    <h5  class="py-3 mt-3 mb-0">Bakery</h5>
+
+    <!-- <div class="row justify-content-center g-4 "> -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+<!-- 
+      <div class="col-12 col-md-6  col-lg-4 g-lg-4 ">
+        <div class="card  shadow-lg d-flex justify-content-center align-items-center bg-light border-0">
+          <img src="img/menu/Croissant.jpg" class="card-img-top justify-content-center " alt="..." style="width: 80%;">
+          <div class="card-body">
+            <h5 class="card-title">Croissant</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="nopadding">$6</p>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="col-12 col-md-6  col-lg-4 g-lg-4 ">
+        <div class="card  shadow-lg d-flex justify-content-center align-items-center bg-light border-0">
+          <img src="img/menu/Croissant.jpg" class="card-img-top img-fluid menu-img">
+          <div class="card-body">
+            <h5 class="card-title">Croissant</h5>
+            <p class="card-text d-none d-md-block">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="nopadding">$6</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6  col-lg-4 g-lg-4 ">
+        <div class="card  shadow-lg d-flex justify-content-center align-items-center bg-light border-0">
+          <img src="img/menu/Daily Muffin.jpg" class="card-img-top img-fluid menu-img">
+          <div class="card-body">
+            <h5 class="card-title">Daily Muffin</h5>
+            <p class="card-text  d-none d-md-block">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="nopadding">$6</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6  col-lg-4 g-lg-4 ">
+        <div class="card  shadow-lg d-flex justify-content-center align-items-center bg-light border-0">
+          <img src="img/menu/Cheesecake.jpg" class="card-img-top img-fluid menu-img"> 
+          <div class="card-body">
+            <h5 class="card-title">Cheesecake</h5>
+            <p class="card-text  d-none d-md-block">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="nopadding">$6</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <h5  class="py-3 mt-3 mb-0">Breakfast</h5>
+    <!-- <div class="row justify-content-center g-4"> -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+      <div class="col-12 col-md-6  col-lg-4 g-lg-4 ">
+        <div class="card  shadow-lg d-flex justify-content-center align-items-center bg-light border-0">
+          <img src="img/menu/Granola & Greek Yogurt.jpg" class="card-img-top img-fluid menu-img">
+          <div class="card-body">
+            <h5 class="card-title">Granola & Greek Yogurt</h5>
+            <p class="card-text d-none d-md-block">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="nopadding">$12</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6  col-lg-4 g-lg-4 ">
+        <div class="card  shadow-lg d-flex justify-content-center align-items-center bg-light border-0">
+          <img src="img/menu/Chia Pudding.jpg" class="card-img-top img-fluid menu-img">
+          <div class="card-body">
+            <h5 class="card-title">Chia Pudding</h5>
+            <p class="card-text d-none d-md-block">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="nopadding">$12</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6  col-lg-4 g-lg-4 ">
+        <div class="card  shadow-lg d-flex justify-content-center align-items-center bg-light border-0">
+          <img src="img/menu/Superfood Acai Bowl.jpg" class="card-img-top img-fluid menu-img">
+          <div class="card-body">
+            <h5 class="card-title">Superfood Acai Bowl</h5>
+            <p class="card-text d-none d-md-block">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="nopadding">$12</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6  col-lg-4 g-lg-4 ">
+        <div class="card  shadow-lg d-flex justify-content-center align-items-center bg-light border-0">
+          <img src="img/menu/Avocado Toast.jpg" class="card-img-top img-fluid menu-img">
+          <div class="card-body">
+            <h5 class="card-title">Avocado Toast</h5>
+            <p class="card-text d-none d-md-block">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="nopadding">$12</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6  col-lg-4 g-lg-4 ">
+        <div class="card  shadow-lg d-flex justify-content-center align-items-center bg-light border-0">
+          <img src="img/menu/Eggs Benedict.jpg" class="card-img-top img-fluid menu-img">
+          <div class="card-body">
+            <h5 class="card-title">Eggs Benedict</h5>
+            <p class="card-text d-none d-md-block">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="nopadding">$12</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6  col-lg-4 g-lg-4 ">
+        <div class="card  shadow-lg d-flex justify-content-center align-items-center bg-light border-0">
+          <img src="img/menu/Bacon & Eggs on Rye.jpg" class="card-img-top img-fluid menu-img">
+          <div class="card-body">
+            <h5 class="card-title">Bacon & Eggs on Rye</h5>
+            <p class="card-text d-none d-md-block">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="nopadding">$12</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6  col-lg-4 g-lg-4 ">
+        <div class="card  shadow-lg d-flex justify-content-center align-items-center bg-light border-0">
+          <img src="img/menu/Salmon Brioche.jpg" class="card-img-top img-fluid menu-img">
+          <div class="card-body">
+            <h5 class="card-title">Salmon Brioche</h5>
+            <p class="card-text d-none d-md-block">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="nopadding">$12</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6  col-lg-4 g-lg-4 ">
+        <div class="card  shadow-lg d-flex justify-content-center align-items-center bg-light border-0">
+          <img src="img/menu/Smoked Salmon Bagel.jpg" class="card-img-top img-fluid menu-img">
+          <div class="card-body">
+            <h5 class="card-title">Smoked Salmon Bagel</h5>
+            <p class="card-text d-none d-md-block">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="nopadding">$12</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6  col-lg-4 g-lg-4 ">
+        <div class="card  shadow-lg d-flex justify-content-center align-items-center bg-light border-0">
+          <img src="img/menu/Waffle.jpg" class="card-img-top img-fluid menu-img">
+          <div class="card-body">
+            <h5 class="card-title">Waffle</h5>
+            <p class="card-text d-none d-md-block">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="nopadding">$12</p>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+
+    <h5  class="py-3 mt-3 mb-0">Drink</h5>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <!-- <div class="row justify-content-center g-4"> -->
+      <div class="col-12 col-md-6  col-lg-4 g-lg-4 ">
+        <div class="card  shadow-lg d-flex justify-content-center align-items-center bg-light border-0">
+          <img src="img/menu/latté.jpg" class="card-img-top img-fluid menu-img">
+          <div class="card-body">
+            <h5 class="card-title">latté</h5>
+            <p class="card-text d-none d-md-block">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="nopadding">$12</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6  col-lg-4 g-lg-4 ">
+        <div class="card  shadow-lg d-flex justify-content-center align-items-center bg-light border-0">
+          <img src="img/menu/Americano.jpg" class="card-img-top img-fluid menu-img">
+          <div class="card-body">
+            <h5 class="card-title">Americano</h5>
+            <p class="card-text d-none d-md-block">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="nopadding">$12</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6  col-lg-4 g-lg-4 ">
+        <div class="card  shadow-lg d-flex justify-content-center align-items-center bg-light border-0">
+          <img src="img/menu/pour over coffee.jpg" class="card-img-top img-fluid menu-img">
+          <div class="card-body">
+            <h5 class="card-title">pour over coffee</h5>
+            <p class="card-text d-none d-md-block">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="nopadding">$12</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+
+
+    
+    </div>
+  </div>
+
+  
+
+<!-- footer -->
+
+  <div class="container-fluid footer1 white">
+    <div class="row justify-content-around ">
+
+      <div class="col-12 col-md-4 nopadding my-md-5  my-3 text-center text-md-start">
+        <h4>Newsletter</h4>
+        <p>Stay up to date with all the latest from cafe</p>
+        <p class="m-0">Email</p>
+        <form class="row g-1">
+          <div class="col-7 col-md-8 offset-1 offset-md-0">
+            <!-- <label for="inputPassword2" class="visually-hidden">Password</label> -->
+            <!-- <input type="password" class="form-control" id="inputPassword2" placeholder="Password"> -->
+            <input type="email" placeholder="Enter your email" class="input-email form-control textgrayplaceholder">
+          </div>
+          <div class="col-2 col-md-4 ">
+            <button type="submit" class="join btn btn-outline-light ">Join</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-12 col-md-4 nopadding my-md-5 my-3  text-center text-md-start">
+        <h4>Talk to Us</h4>
+        <p class="m-0">Tel: 0965580712</p>
+        <p>t109360213@ntut.org.tw</p>
+        <p>106344 台北市忠孝東路三段一號</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer2 text-center">
+    <p class="nopadding">@2023 by jack</p>
+  </div>
+
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

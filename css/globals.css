@@ -7,7 +7,127 @@ html,
 body {
   margin: 0px;
   height: 100%;
+  margin-top:69px;
+  padding: 0px;
+  font-size: 20px;
+  
 }
+h1{
+  line-height: 2;
+  font-family: "Inter-Regular", Helvetica, sans-serif;
+}
+
+p{
+  line-height: 2;
+  font-family: "Inter-Regular", Helvetica, sans-serif;
+
+
+}
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.white{
+  color: #fff;
+}
+
+.btn-green{
+  background-color: #404D3C !important;
+  border-color: #404D3C !important;
+}
+
+.navbar{
+  background-color: #f7e5d1;
+}
+
+.navbar-logo {
+  width: 43px; /* 或您想要的任何尺寸 */
+  height: 43px; /* 使其與寬度相同以獲得一個完美的圓形 */
+  border-radius: 50%; /* 這將使圖片成為圓形 */
+  object-fit: cover; /* 這將確保圖片覆蓋整個區域並保持它的比例 */
+  border: 2px solid #fff; /* 可選，如果您想要一個邊框 */
+}
+
+
+.navbar-brand {
+padding: 1rem; /* 增加左側填充 */
+}
+
+.nav-item{
+margin: auto 15px;
+}
+
+/* 基础样式: 所有屏幕尺寸 */
+.navbar-nav .nav-item .nav-link {
+  text-align: left; /* 默认左对齐 */
+}
+
+.banner1-title{
+  width: 100%;
+  background-color: #fbf3e8;
+}
+
+.footer1{
+  background-color: #404D3C;
+  font-size: 16px;
+}
+
+.footer2{
+  background-color: #F7E5D1;
+  font-size: 14px !important;
+}
+
+.footer1 .join{
+  font-size: 16px !important;
+}
+
+.footer1 .input-email{
+  background: transparent !important;
+  color: #fff !important; /* 更改字体颜色为您想要的颜色 */
+  font-size: 16px !important; /* 设置字体大小 */
+
+}
+
+
+
+
+@media (max-width: 767.98px) { /* Bootstrap 5 'md'断点的上一个像素 */
+  body{
+      font-size: 16px !important;
+  }
+  .navbar-nav .nav-item {
+    display: flex;
+    justify-content: center;
+  }
+  .navbar-nav .nav-item .nav-link {
+    text-align: center; /* 在小屏幕设备上使文本居中 */
+  }
+
+  .banner1-about-us .col{
+      margin: 30px auto;
+      }
+
+  .group1-bestbite{
+      margin: 20px auto;
+  }
+
+  /* .view-menu{
+      margin-bottom: 20px;
+  } */
+}
+
+
+@media (max-width: 991.98px) { /* 這是Bootstrap 5中的 'lg' 斷點的上一個像素 */
+  .navbar-nav .nav-item {
+      display: flex;
+      justify-content: center;
+    }
+    .navbar-nav .nav-item .nav-link {
+      text-align: center; /* 在小屏幕设备上使文本居中 */
+    }
+}
+
 /* a blue color as a generic focus style */
 button:focus-visible {
   outline: 2px solid #4a90e2 !important;
@@ -17,3 +137,5 @@ a {
   text-decoration: none;
 }
 @import url("https://fonts.googleapis.com/css?family=Inter:400,700");
+
+

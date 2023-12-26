@@ -1,0 +1,63 @@
+.btnallday{
+
+}
+
+
+.textgrayplaceholder::placeholder{
+    color: #d9d9d9 !important;
+  }
+
+.textgray{
+    color: #d9d9d9 !important;
+  }
+
+.editcolor{
+  color: #60695D !important;
+}
+.editcolor:hover{
+  opacity: 70% !important;
+}
+
+
+
+
+.order-img{
+  height: 100% !important; /* 设置固定的高度 */
+  object-fit: cover;
+  width: 100% !important; /* 宽度100% */
+  max-width: 100%; /* 最大宽度100%以确保在小屏幕上不会溢出 */
+}
+
+.card-hover:hover{
+    cursor: pointer;
+
+}
+
+
+  
+  
+  /* 增加媒體查詢以適應小屏幕 */
+  /* @media (max-width: 768px) {
+
+    .modal-dialog-right {
+      right: 10px;
+    }
+  } */
+
+  @media (max-width: 767.98px) { /* Bootstrap 5 'md'断点的上一个像素 */
+    .modal-dialog-right {
+      position: absolute;
+      right: 0!important; /* 對齊到右邊 */
+      margin-right: 0 !important;
+      top: 50%!important; /* 垂直置中 */
+      transform: translateY(-50%)!important; /* 垂直置中的微調 */
+      background-color: red !important; /* 只是為了標示位置，可以移除 */
+    }
+  }
+  
+  
+  @media (max-width: 991.98px) { /* 這是Bootstrap 5中的 'lg' 斷點的上一個像素 */
+
+  }
+
+  

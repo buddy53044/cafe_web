@@ -1,0 +1,40 @@
+
+.banner1-about-us{
+    width: 100%;
+    background-color: #fbf3e8;
+}
+
+.banner1-about-us .col{
+    margin: 69px auto;
+    }
+
+.banner1-about-us .p{
+    margin-top: 20px ;
+    }
+
+.img{
+    /* object-fit: cover; */
+    /* width: 100%; */
+}
+
+.banner2-real{
+    background-color: #5F695E;
+    margin: 75px ;
+    padding: 70px;
+}
+
+
+/* style="padding:100px;" */
+/* style="font-size: 16px;" */
+  
+  @media (max-width: 767.98px) { /* Bootstrap 5 'md'断点的上一个像素 */
+    /* .view-menu{
+        margin-bottom: 20px;
+    } */
+  }
+  
+
+@media (max-width: 991.98px) { /* 這是Bootstrap 5中的 'lg' 斷點的上一個像素 */
+
+  }
+  

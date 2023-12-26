@@ -1,84 +1,22 @@
-/* 基础重置 */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+
+.menu-img{
+  height: 250px !important; /* 设置固定的高度 */
+  object-fit: cover;
+  width: 60% !important; /* 宽度100% */
+  max-width: 100%; /* 最大宽度100%以确保在小屏幕上不会溢出 */
 }
 
-body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  color: #333;
+
+
+
+@media (max-width: 767.98px) { /* Bootstrap 5 'md'断点的上一个像素 */
+  /* .view-menu{
+      margin-bottom: 20px;
+  } */
 }
 
-header {
-  /* 顶部导航样式 */
-}
 
-main {
-  width: 80%;
-  margin: auto;
-  padding-top: 20px;
-}
+@media (max-width: 991.98px) { /* 這是Bootstrap 5中的 'lg' 斷點的上一個像素 */
 
-h1 {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.menu-category {
-  margin-bottom: 50px;
-}
-
-.menu-items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.menu-item {
-  flex-basis: 30%;
-  margin-bottom: 20px;
-}
-
-.menu-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-.menu-item h3 {
-  margin-top: 10px;
-}
-
-.menu-item p {
-  font-size: 0.9em;
-  margin-bottom: 5px;
-}
-
-.price {
-  font-weight: bold;
-  color: green;
-}
-
-footer {
-  background: #f4f4f4;
-  padding: 20px;
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  .menu-items {
-    justify-content: center;
-  }
-
-  .menu-item {
-    flex-basis: 45%;
-  }
-}
-
-@media (max-width: 480px) {
-  .menu-item {
-    flex-basis: 90%;
-  }
 }
