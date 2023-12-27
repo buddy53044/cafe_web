@@ -23,7 +23,7 @@ $(document).ready(function() {
   });
 
   // for modal test show normally
-  const myModal = new bootstrap.Modal('#exampleModal');
+  const myModal = new bootstrap.Modal('#cartmodal');
   myModal.show();
 
 });
