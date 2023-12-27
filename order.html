@@ -115,6 +115,7 @@
                 </div>
                 <form class="d-flex ">
                     <!-- <button class="btn btn-outline-dark" type="button">View Cart 1</button> -->
+
                     <button type="button" data-bs-toggle="modal" data-bs-target="#cartmodal"
                         class="btn btn-success btn-green btn-md  text-nowrap">View Cart</button>
 
@@ -538,7 +539,7 @@
 </div>
 
 <!-- viewcartModal -->
-<div class="modal fade" id="cartmodal" tabindex="-1" aria-labelledby="cartmodallabel" aria-hidden="true">
+<div class="modal fade show" id="cartmodal" tabindex="-1" aria-labelledby="cartmodallabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-dialog-right">
         <div class="modal-content">
             <div class="modal-header">
@@ -547,9 +548,10 @@
             </div>
             <div class="modal-body">
 
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-3 nopadding">
+                <div class="container-fluid ">
+
+                    <div class="row ">
+                        <div class="col-3 nopadding  ">
                             <div class="input-group">
                                 <button class="btn py-0 px-1 border-dark border-end-0" type="button">-</button>
                                 <input type="text"
@@ -562,11 +564,19 @@
 
 
                         <div class="col-6 ">
-                            <p>Daily Muffin</p>
-                            <p class="editcolor">Edit</p>
-                            <p class="editcolor">Remove</p>
+                            <div class="row">
+                                <div class="col-12 d-flex">
+                                    <p>Daily Muffin</p>
+                                </div>
+                                <div class="col align-self-baseline" style="font-size: 14px;">
+                                    <p class="editcolor">Edit</p>
+                                </div>
+                                <div class="col" style="font-size: 14px;">
+                                    <p class="editcolor">Remove</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-3 text-end">
+                        <div class="col-3 text-end ">
                             <p>$6</p>
                         </div>
 
@@ -582,17 +592,34 @@
 
             </div>
             <div class="modal-footer">
-                <p>Add Order Notes</p>
-
-                <form class="row g-0 pb-2">
-                    <div class="col-12 pb-2">
-                        <textarea class="form-control px-2 textgrayplaceholder border-dark"
-                            placeholder="Please add order notes." rows="2"></textarea>
+                <div class="row">
+                    <div class="col-12">
+                        <p>Add Order Notes</p>
                     </div>
-                </form>
 
-                <p>Subtotal</p>
-                <p>$18</p>
+                    <div class="col-12">
+                        <form class="row g-0 pb-2">
+                            <div class="col-12 pb-2">
+                                <textarea class="form-control px-2 textgrayplaceholder border-dark "
+                                    placeholder="Please add order notes." rows="2"></textarea>
+                            </div>
+                        </form>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <p>Subtotal</p>
+                        </div>
+                        <div class="col-6 text-end">
+                            <p>$18</p>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
 
                 <button type="button" class="btn btn-success btn-green w-100">Continue to Checkout</button>
             </div>
