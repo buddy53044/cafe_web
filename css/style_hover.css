@@ -81,29 +81,3 @@
     outline: 1px solid #ffffff;
 }
 
-/* 针对菜单项的悬停效果 */
-.order_item:hover {
-  border: 2px solid #purple; /* 这里应用一个紫色边框，您可以选择合适的颜色 */
-  cursor: pointer; /* 显示指针，表示该项目是可点击的 */
-}
-
-/* 针对下拉菜单的悬停效果 */
-.all_day_slide:hover, .nav_food:hover {
-  background-color: #f0f0f0; /* 悬停时的背景颜色 */
-}
-
-/* 针对购物车按钮的悬停效果 */
-.cart:hover {
-  background-color: #dcdcdc; /* 更改背景颜色 */
-}
-
-/* 针对取货按钮的悬停效果 */
-.pickup:hover {
-  text-decoration: underline; /* 添加下划线来表示可交互性 */
-}
-
-/* 针对更改按钮的悬停效果 */
-.change:hover {
-  color: #ff0000; /* 更改文字颜色 */
-}
-
