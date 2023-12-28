@@ -20,7 +20,6 @@
 
 
 
-
 .order-img{
   height: 100% !important; /* 设置固定的高度 */
   object-fit: cover;
@@ -61,3 +60,9 @@
   }
 
   
+
+
+  .carthover:hover{
+    cursor: pointer;
+    background-color: #5F695E !important;
+  }
