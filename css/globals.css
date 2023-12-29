@@ -40,6 +40,14 @@ textarea{
   border-color: #404D3C !important;
 }
 
+.textgrayplaceholder::placeholder{
+  color: #d9d9d9 !important;
+}
+
+.textgray{
+  color: #d9d9d9 !important;
+}
+
 
 .navbar{
   background-color: #f7e5d1;
