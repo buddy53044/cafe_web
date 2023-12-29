@@ -40,6 +40,11 @@ textarea{
   border-color: #404D3C !important;
 }
 
+.bg-green-5F695E{
+  background-color: #5F695E !important;
+}
+
+
 .textgrayplaceholder::placeholder{
   color: #d9d9d9 !important;
 }
