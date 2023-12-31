@@ -44,6 +44,10 @@ textarea{
   background-color: #5F695E !important;
 }
 
+.bg-beige-FBF3E8{
+  background-color: #FBF3E8 !important;
+}
+
 
 .textgrayplaceholder::placeholder{
   color: #d9d9d9 !important;
