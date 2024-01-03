@@ -1,11 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/menu_styles.css" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <title>Navbar</title>
 </head>
+
 <body>
-    <p>contact</p>
+
+    <!-- header -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <div class="d-flex align-items-center">
+                    <img class="navbar-logo" src="img/logo.png" alt="Logo" />
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/order.html">Online Order</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login.html">Log In</a>
+                    </li>
+                </ul>
+                <!-- <div class="d-flex">
+            <img class="login-icon" src="img/login-1.png" alt="Log In" />
+            <a class="nav-link" href="#">Log In</a>
+        </div> -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- header -->
+
+    <div class="container-fluid banner1-title py-5 ">
+        <div class="row">
+            <div class="col text-center">
+                <h1>Let’s Connect Us</h1>
+                <p>
+                    Hello, coffee lovers! We're delighted to share our passion for exceptional coffee with you.</br> 
+                    At 猩八顆, it's not just about a cup of coffee; it's about the experience that comes with every sip.</br> 
+                    Located in 台北市忠孝東路三段一號 , we're a haven for those who appreciate the finer nuances of coffee and community.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row g-4">
+            <div class="col-12 col-md-6 ">
+                <p class="nopadding">Name</p>
+                <form class="row g-0 pb-2">
+                    <div class="col-12">
+                        <input type="text" placeholder="台北市忠孝東路三段一號" class="form-control px-2 textgrayplaceholder ">
+                    </div>
+                </form>
+
+                <p class="nopadding">Phone</p>
+                <form class="row g-0 pb-2">
+                    <div class="col-12">
+                        <input type="text" placeholder="台北市忠孝東路三段一號" class="form-control px-2 textgrayplaceholder ">
+                    </div>
+                </form>
+
+                <p class="nopadding">Email</p>
+                <form class="row g-0 pb-2">
+                    <div class="col-12">
+                        <input type="text" placeholder="台北市忠孝東路三段一號" class="form-control px-2 textgrayplaceholder ">
+                    </div>
+                </form>
+
+                <p class="nopadding">Message</p>
+                <form class="row g-0 pb-2">
+                    <div class="col-12 pb-2">
+                        <textarea class="form-control px-2 textgrayplaceholder"
+                            placeholder="Add them here. We'll do our best to make it happen." rows="2"></textarea>
+                    </div>
+                </form>
+
+                <button type="button" class="btn  btn-success btn-green w-50 m-1">Send</button>
+
+            </div>
+
+            <div class="col-12 col-md-6  ">
+
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                            class="bi bi-geo-alt" viewBox="0 0 16 16">
+                            <path
+                                d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+                            <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                        </svg>
+
+                        <h6 class="nopadding mt-2">Address</h6>
+                        <p>台北市忠孝東路三段一號</p>
+                    </div>
+
+                    <div class="col">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                            class="bi bi-telephone" viewBox="0 0 16 16">
+                            <path
+                                d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                        </svg>
+                        <h6 class="nopadding  mt-2">Phone</h6>
+                        <p>0965580712</p>
+
+                    </div>
+
+                    <div class="col">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                            class="bi bi-envelope" viewBox="0 0 16 16">
+                            <path
+                                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                        </svg>
+
+                        <h6 class="nopadding  mt-2">Email</h6>
+                        <p>t109360213@ntut.org.tw</p>
+
+                    </div>
+
+                    <div class="col">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                            class="bi bi-hand-thumbs-up" viewBox="0 0 16 16">
+                            <path
+                                d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2.144 2.144 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a9.84 9.84 0 0 0-.443.05 9.365 9.365 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a8.908 8.908 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.224 2.224 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.866.866 0 0 1-.121.416c-.165.288-.503.56-1.066.56z" />
+                        </svg>
+
+                        <h6 class="nopadding  mt-2">Follow</h6>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- footer -->
+
+    <div class="container-fluid footer1 white mt-5">
+        <div class="row justify-content-around ">
+
+            <div class="col-12 col-md-4 nopadding my-md-5  my-3 text-center text-md-start">
+                <h4>Newsletter</h4>
+                <p>Stay up to date with all the latest from cafe</p>
+                <p class="m-0">Email</p>
+                <form class="row g-1">
+                    <div class="col-7 col-md-8 offset-1 offset-md-0">
+                        <!-- <label for="inputPassword2" class="visually-hidden">Password</label> -->
+                        <!-- <input type="password" class="form-control" id="inputPassword2" placeholder="Password"> -->
+                        <input type="email" placeholder="Enter your email"
+                            class="input-email form-control textgrayplaceholder">
+                    </div>
+                    <div class="col-2 col-md-4 ">
+                        <button type="submit" class="join btn btn-outline-light ">Join</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 col-md-4 nopadding my-md-5 my-3  text-center text-md-start">
+                <h4>Talk to Us</h4>
+                <p class="m-0">Tel: 0965580712</p>
+                <p>t109360213@ntut.org.tw</p>
+                <p>106344 台北市忠孝東路三段一號</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer2 text-center">
+        <p class="nopadding">@2023 by jack</p>
+    </div>
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>
