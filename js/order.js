@@ -21,4 +21,9 @@ $(document).ready(function() {
       input.val(value);
     });
   });
+
+  // for modal test show normally
+  const myModal = new bootstrap.Modal('#cartmodal');
+  myModal.show();
+
 });

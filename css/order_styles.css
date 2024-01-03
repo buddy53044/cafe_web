@@ -3,21 +3,12 @@
 }
 
 
-.textgrayplaceholder::placeholder{
-    color: #d9d9d9 !important;
-  }
-
-.textgray{
-    color: #d9d9d9 !important;
-  }
-
 .editcolor{
   color: #60695D !important;
 }
 .editcolor:hover{
   opacity: 70% !important;
 }
-
 
 
 
@@ -44,15 +35,19 @@
     }
   } */
 
-  @media (max-width: 767.98px) { /* Bootstrap 5 'md'断点的上一个像素 */
+  @media (min-width: 768px) { /* 當屏幕寬度大於等於768px（md）時 */
     .modal-dialog-right {
       position: absolute;
-      right: 0!important; /* 對齊到右邊 */
+      right: 0 !important;
       margin-right: 0 !important;
-      top: 50%!important; /* 垂直置中 */
-      transform: translateY(-50%)!important; /* 垂直置中的微調 */
-      background-color: red !important; /* 只是為了標示位置，可以移除 */
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      /* background-color: red !important; */
     }
+  }
+
+  @media (max-width: 767.98px) { /* Bootstrap 5 'md'断点的上一个像素 */
+
   }
   
   
@@ -61,3 +56,9 @@
   }
 
   
+
+
+  .carthover:hover{
+    cursor: pointer;
+    background-color: #5F695E !important;
+  }

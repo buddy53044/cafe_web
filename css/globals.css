@@ -12,7 +12,7 @@ body {
   font-size: 20px;
   
 }
-h1{
+h1, h2, h3, h4, h5, h6 {
   line-height: 2;
   font-family: "Inter-Regular", Helvetica, sans-serif;
 }
@@ -20,22 +20,43 @@ h1{
 p{
   line-height: 2;
   font-family: "Inter-Regular", Helvetica, sans-serif;
-
-
 }
+
+textarea{
+  resize: none !important;
+}
+
 .nopadding {
   padding: 0 !important;
   margin: 0 !important;
 }
 
 .white{
-  color: #fff;
+  color: #fff !important;
 }
 
 .btn-green{
   background-color: #404D3C !important;
   border-color: #404D3C !important;
 }
+
+.bg-green-5F695E{
+  background-color: #5F695E !important;
+}
+
+.bg-beige-FBF3E8{
+  background-color: #FBF3E8 !important;
+}
+
+
+.textgrayplaceholder::placeholder{
+  color: #d9d9d9 !important;
+}
+
+.textgray{
+  color: #d9d9d9 !important;
+}
+
 
 .navbar{
   background-color: #f7e5d1;
@@ -137,5 +158,4 @@ a {
   text-decoration: none;
 }
 @import url("https://fonts.googleapis.com/css?family=Inter:400,700");
-
 
