@@ -7,7 +7,7 @@ $(document).ready(function() {
 
     minus.on('click', function() {
       let value = parseInt(input.val(), 10);
-      value = isNaN(value) ? 0 : value;
+      value = isNaN(value) ? 1 : value;
       if (value > 0) {
         value--;
       }

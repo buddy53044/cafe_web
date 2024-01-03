@@ -22,6 +22,9 @@ db.once('open', function() {
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
+const temp_cartRouter = require('./routes/temp_cart');
+const contactRouter = require('./routes/contact');
+
 
 
 var app = express();
@@ -42,6 +45,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 app.use('/products', productsRouter); // post get sussessfully
+app.use('/temp_cart', temp_cartRouter); //
+// app.use('/contact', contactRouter); //
 
 app.set('view engine', 'jade'); // 设置模板引擎为Jade
 app.set('views', path.join(__dirname, 'views')); // 设置模板文件的目录

@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
     <title>Navbar</title>
 </head>
 
@@ -78,33 +81,36 @@
                 <p class="nopadding">Name</p>
                 <form class="row g-0 pb-2">
                     <div class="col-12">
-                        <input type="text" placeholder="台北市忠孝東路三段一號" class="form-control px-2 textgrayplaceholder ">
+                        <input id="name_input" type="text" placeholder=""
+                            class="form-control px-2 textgrayplaceholder ">
                     </div>
                 </form>
 
                 <p class="nopadding">Phone</p>
                 <form class="row g-0 pb-2">
                     <div class="col-12">
-                        <input type="text" placeholder="台北市忠孝東路三段一號" class="form-control px-2 textgrayplaceholder ">
+                        <input id="phone_input" type="text" placeholder=""
+                            class="form-control px-2 textgrayplaceholder ">
                     </div>
                 </form>
 
                 <p class="nopadding">Email</p>
                 <form class="row g-0 pb-2">
                     <div class="col-12">
-                        <input type="text" placeholder="台北市忠孝東路三段一號" class="form-control px-2 textgrayplaceholder ">
+                        <input id="email_input" type="text" placeholder=""
+                            class="form-control px-2 textgrayplaceholder ">
                     </div>
                 </form>
 
                 <p class="nopadding">Message</p>
                 <form class="row g-0 pb-2">
                     <div class="col-12 pb-2">
-                        <textarea class="form-control px-2 textgrayplaceholder"
+                        <textarea id="message_input" class="form-control px-2 textgrayplaceholder"
                             placeholder="Add them here. We'll do our best to make it happen." rows="2"></textarea>
                     </div>
                 </form>
 
-                <button type="button" class="btn  btn-success btn-green w-50 m-1">Send</button>
+                <button id="sendBtn" type="button" class="btn  btn-success btn-green w-50 m-1">Send</button>
 
             </div>
 
@@ -187,22 +193,22 @@
 
     <!-- footer -->
 
-    <div class="container-fluid footer1 white mt-5">
+    <div class="container-fluid footer1 white">
         <div class="row justify-content-around ">
 
             <div class="col-12 col-md-4 nopadding my-md-5  my-3 text-center text-md-start">
                 <h4>Newsletter</h4>
                 <p>Stay up to date with all the latest from cafe</p>
                 <p class="m-0">Email</p>
-                <form class="row g-1">
+                <form id="footer_Newsletter_email" class="row g-1">
                     <div class="col-7 col-md-8 offset-1 offset-md-0">
                         <!-- <label for="inputPassword2" class="visually-hidden">Password</label> -->
                         <!-- <input type="password" class="form-control" id="inputPassword2" placeholder="Password"> -->
-                        <input type="email" placeholder="Enter your email"
+                        <input type="email" id="emailInput" placeholder="Enter your email"
                             class="input-email form-control textgrayplaceholder">
                     </div>
                     <div class="col-2 col-md-4 ">
-                        <button type="submit" class="join btn btn-outline-light ">Join</button>
+                        <button type="submit" id="submitBtn" class="join btn btn-outline-light ">Join</button>
                     </div>
                 </form>
             </div>
@@ -223,6 +229,8 @@
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/contact.js"></script>
 
 </body>
 

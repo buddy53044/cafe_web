@@ -1,53 +1,72 @@
-$(document).ready(function(){
-    // REGISTER DOM ELEMENTS
-    const $title = $('#title');
-    const $doc = $("#doc");
-  
-    // INITIALIZE FIREBASE
-    firebase.initializeApp({
-        apiKey: "AIzaSyBFxXemKEJRW_X7nS1NnrDBZXWye8km0s4",
-        authDomain: "cafe-web-e93a9.firebaseapp.com",
-        projectId: "cafe-web-e93a9",
-        storageBucket: "cafe-web-e93a9.appspot.com",
-        messagingSenderId: "755176808542",
-        appId: "1:755176808542:web:ca57d4699f0871504294cf"
-    });
-  
-    let db = firebase.firestore();
-    let usersRef = db.collection("users");
-    usersRef.add({
-    "id" :"test",
-      "name": "NTUE",
-      "age": 13,
-      "tel": {
-        "tel1": "111-111",
-        "tel2": "222-111"
+// document.addEventListener('DOMContentLoaded', function () {
+//   // 监听按钮点击事件
+//   document.getElementById('submitBtn').addEventListener('click', function () {
+//       // 获取输入框的值
+//       const email = document.getElementById('emailInput').value;
+
+//       // 发送POST请求到后端API
+//       axios.post('/Newsletter', { email: email })
+//           .then(function (response) {
+//               // 请求成功后的操作
+//               alert('訂閱成功！');
+//               console.log(response);
+//           })
+//           .catch(function (error) {
+//               // 请求失败后的操作
+//               alert('訂閱失敗，請重試。');
+//               console.error(error);
+//           });
+//   });
+
+//   // 阻止表单默认提交行为
+//   $('#footer_Newsletter_email').submit(function (e) {
+//       e.preventDefault(); // 阻止表单提交
+//   });
+// });
+
+
+$(document).ready(function () {
+  // 监听按钮点击事件
+  $('#submitBtn').click(function (e) {
+      e.preventDefault(); // 阻止按钮默认行为
+
+      // 获取输入框的值
+      const email = $('#emailInput').val().trim(); // 去除空白字符
+
+      // 验证输入的电子邮件地址是否有效
+      if (!isValidEmail(email)) {
+          alert('请输入有效的电子邮件地址');
+          return; // 如果输入的电子邮件地址无效，不执行后续的代码
       }
-    });
-  
-    let docRef = usersRef.doc("1167");
-  
-    docRef.get().then(function(doc){
-      $doc.html(`doc 1167 name = ${doc.data().name}`)
-    });
-  
-    docRef.set({
-      "name": "Alex2",
-      "age": 27,
-      "tel": {
-        "tel1": "111-111",
-        "tel2": "222-111"
-      }
-    });
-  
-    // docRef.update({
-    //   "name": "John Doe"
-    // });
-  
-    // docRef.onSnapshot(
-    //   function(doc){
-    //     $title.html(`user name = ${doc.data().name}, user age = ${doc.data().age}`);
-    //   }
-    // );
-  
+
+      // 发送POST请求到后端API
+      $.ajax({
+          type: 'POST',
+          url: '/Newsletter', // 替换成您的后端API URL
+          data: { email: email },
+          success: function (response) {
+              // 请求成功后的操作
+              alert('訂閱成功！');
+              console.log(response);
+          },
+          error: function (error) {
+              // 请求失败后的操作
+              alert('訂閱失敗，請重試。');
+              console.error(error);
+          }
+      });
   });
+
+  // 阻止表单默认提交行为
+  $('#footer_Newsletter_email').submit(function (e) {
+      e.preventDefault(); // 阻止表单提交
+  });
+
+  // 验证电子邮件地址是否有效的函数
+  function isValidEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+  }
+});
+
+

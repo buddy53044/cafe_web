@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
   <title>Navbar</title>
 </head>
 <body>
@@ -104,7 +107,7 @@
           <img src="img/menu/Daily Muffin.jpg" class="card-img-top img-fluid menu-img">
           <div class="card-body">
             <h5 class="card-title">Daily Muffin</h5>
-            <p class="card-text  d-none d-md-block"> A soft, moist, sweet bakery treat, ideal for breakfast or snacks.</p>
+            <p class="card-text  d-none d-md-block">A soft, moist, sweet bakery treat, ideal for breakfast or snacks.</p>
             <p class="nopadding">$6</p>
           </div>
         </div>
@@ -267,43 +270,45 @@
 
   
 
-<!-- footer -->
+    <!-- footer -->
 
-  <div class="container-fluid footer1 white">
-    <div class="row justify-content-around ">
+    <div class="container-fluid footer1 white">
+      <div class="row justify-content-around ">
 
-      <div class="col-12 col-md-4 nopadding my-md-5  my-3 text-center text-md-start">
-        <h4>Newsletter</h4>
-        <p>Stay up to date with all the latest from cafe</p>
-        <p class="m-0">Email</p>
-        <form class="row g-1">
-          <div class="col-7 col-md-8 offset-1 offset-md-0">
-            <!-- <label for="inputPassword2" class="visually-hidden">Password</label> -->
-            <!-- <input type="password" class="form-control" id="inputPassword2" placeholder="Password"> -->
-            <input type="email" placeholder="Enter your email" class="input-email form-control textgrayplaceholder">
+          <div class="col-12 col-md-4 nopadding my-md-5  my-3 text-center text-md-start">
+              <h4>Newsletter</h4>
+              <p>Stay up to date with all the latest from cafe</p>
+              <p class="m-0">Email</p>
+              <form id="footer_Newsletter_email" class="row g-1">
+                  <div class="col-7 col-md-8 offset-1 offset-md-0">
+                      <!-- <label for="inputPassword2" class="visually-hidden">Password</label> -->
+                      <!-- <input type="password" class="form-control" id="inputPassword2" placeholder="Password"> -->
+                      <input type="email" id="emailInput"  placeholder="Enter your email"
+                          class="input-email form-control textgrayplaceholder">
+                  </div>
+                  <div class="col-2 col-md-4 ">
+                      <button type="submit" id="submitBtn" class="join btn btn-outline-light ">Join</button>
+                  </div>
+              </form>
           </div>
-          <div class="col-2 col-md-4 ">
-            <button type="submit" class="join btn btn-outline-light ">Join</button>
+          <div class="col-12 col-md-4 nopadding my-md-5 my-3  text-center text-md-start">
+              <h4>Talk to Us</h4>
+              <p class="m-0">Tel: 0965580712</p>
+              <p>t109360213@ntut.org.tw</p>
+              <p>106344 台北市忠孝東路三段一號</p>
           </div>
-        </form>
-      </div>
-      <div class="col-12 col-md-4 nopadding my-md-5 my-3  text-center text-md-start">
-        <h4>Talk to Us</h4>
-        <p class="m-0">Tel: 0965580712</p>
-        <p>t109360213@ntut.org.tw</p>
-        <p>106344 台北市忠孝東路三段一號</p>
-      </div>
 
-    </div>
+      </div>
   </div>
 
   <div class="footer2 text-center">
-    <p class="nopadding">@2023 by jack</p>
+      <p class="nopadding">@2023 by jack</p>
   </div>
 
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/index.js"></script>
 
 </body>
 </html>

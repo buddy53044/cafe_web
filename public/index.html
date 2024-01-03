@@ -13,13 +13,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
 
-    <!-- Firebase App is always required and must be first -->
-    <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-app-compat.js"></script>
 
-    <!-- Add additional services that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-storage-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 
 
     <title>Navbar</title>
@@ -118,14 +114,14 @@
       </div>
        -->
 
-    <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner bg-green-5F695E py-1 rounded-0">
-            <div class="carousel-item active">
+            <div class="carousel-item active" data-bs-interval="5000">
                 <div class="">
                     <p class="nopadding white text-center">Weekend Brunch | Saturday 9am - 2pm</p>
                 </div>
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item" data-bs-interval="5000">
                 <div class="">
                     <p class="nopadding white text-center">Daily Deal | Coffee & Pastry $3.99</p>
                 </div>
@@ -285,11 +281,11 @@
                     <div class="col-7 col-md-8 offset-1 offset-md-0">
                         <!-- <label for="inputPassword2" class="visually-hidden">Password</label> -->
                         <!-- <input type="password" class="form-control" id="inputPassword2" placeholder="Password"> -->
-                        <input type="email" placeholder="Enter your email"
+                        <input type="email" id="emailInput"  placeholder="Enter your email"
                             class="input-email form-control textgrayplaceholder">
                     </div>
                     <div class="col-2 col-md-4 ">
-                        <button type="submit" class="join btn btn-outline-light ">Join</button>
+                        <button type="submit" id="submitBtn" class="join btn btn-outline-light ">Join</button>
                     </div>
                 </form>
             </div>
