@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  
   // 监听按钮点击事件
   $("#sendBtn").click(function (e) {
     e.preventDefault(); // 阻止按钮默认行为
@@ -10,10 +11,10 @@ $(document).ready(function () {
     const message = $("#message_input").val();
 
     // 验证输入的电子邮件地址是否有效
-    if (!isValidEmail(email)) {
-      alert("请输入有效的电子邮件地址");
-      return; // 如果输入的电子邮件地址无效，不执行后续的代码
-    }
+    // if (!isValidEmail(email)) {
+    //   alert("请输入有效的电子邮件地址");
+    //   return; // 如果输入的电子邮件地址无效，不执行后续的代码
+    // }
 
     // 发送POST请求到后端API
     $.ajax({

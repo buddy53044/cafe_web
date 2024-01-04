@@ -10,7 +10,6 @@ router.post("/", async (req, res) => {
     email: req.body.email,
     message: req.body.message,
   });
-
   try {
     const newProduct = await product.save();
     res.status(201).json(newProduct);
@@ -28,3 +27,5 @@ router.get("/", async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
+
+module.exports = router;
