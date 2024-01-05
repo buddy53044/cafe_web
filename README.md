@@ -1,2 +1,3 @@
 # cafe_web
-# cafe_web
+href delete :"/"
+npm start

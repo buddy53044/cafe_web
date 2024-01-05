@@ -6,6 +6,8 @@ var logger = require('morgan');
 const mongoose = require('mongoose');
 
 const cors = require('cors');
+const TempCart = require('./models/temp_cart'); // 请根据实际路径修改
+
 
 // 连接到MongoDB数据库
 mongoose.connect('mongodb://localhost:27017', {
@@ -15,8 +17,16 @@ mongoose.connect('mongodb://localhost:27017', {
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
+db.once('open', async function() {
   console.log('Connected to the database');
+
+    // 在连接数据库后清空 Temp_cart
+    // try {
+    //   const result = await TempCart.deleteMany({});
+    //   console.log('Temp_cart emptied');
+    // } catch (error) {
+    //   console.error('清空 Temp_cart 内容时出现错误:', error.message);
+    // }
 });
 
 var indexRouter = require('./routes/index');

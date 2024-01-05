@@ -1,4 +1,3 @@
-
 const mongoose = require("mongoose");
 const moment = require("moment-timezone");
 
@@ -7,8 +6,8 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  Special_Requests: {
-    type: String,
+  Special_Request: {
+    type: String ||undefined,
     required: false,
   },
   price: {
