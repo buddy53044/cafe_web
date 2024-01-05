@@ -34,7 +34,7 @@ $(document).ready(function () {
 
           productsOfType.forEach(function (product) {
             const productCard = `
-          <div class="col-12 col-md-6 col-lg-4 g-lg-4">
+          <div class="col-12 col-md-6 col-lg-4 g-lg-4 cart-hover">
             <div id="${product.name}" class="card shadow-lg d-flex justify-content-center align-items-center bg-light border-0" data-bs-toggle="modal" data-bs-target="#${product.id_spc}">
               <img src="img/menu/${product.name}.jpg" class="card-img-top img-fluid menu-img" alt="${product.name}">
               <div class="card-body">
@@ -99,7 +99,7 @@ $(document).ready(function () {
                                 </div>
                               </div>
                               <div class="col-12 col-lg-8">
-                                <button id="${product.id_spc}_btn" type="button" class="btn btn-success btn-green w-100 btn-add-order">Add to my order $${product.price}</button>
+                                <button id="${product.id_spc}_btn" type="button" class="btn btn-success btn-green w-100 btn-add-order" data-bs-dismiss="modal" aria-label="Close">Add to my order $${product.price}</button>
                               </div>
                             </div>
                           </div>
@@ -217,6 +217,8 @@ $(document).ready(function () {
   }
 
   var AllTempCartData;
+  var subtotal = 0;
+  var updatedTotal;
   $("body").on("click", "#btn_cart", async function () {
     // 清空现有的 cartContent 内容
     $("#cartContent").empty();
@@ -233,7 +235,7 @@ $(document).ready(function () {
       // 根据返回的 cartData 动态生成内容并添加到 cartContent
       cartData.forEach((item) => {
         const cartItemHTML = `
-          <div class="row py-2 cart_content_item">
+          <div class="row py-2 cart_content_item ">
             <div class="col-3 nopadding d-flex align-content-center ">
               <div class="input-group align-content-center">
                 <button id="${item.id_spc}_minus", class="btn btn-outline-secondary border-dark px-1 btn_cart_minus" type="button">-</button>
@@ -264,40 +266,68 @@ $(document).ready(function () {
       });
 
       // 更新 Subtotal
-      const subtotal = cartData.reduce((acc, item) => acc + item.total, 0);
-      $(".modal-footer .row .col-6.text-end p").text(`$${subtotal}`);
+      subtotal = cartData.reduce((acc, item) => acc + item.total, 0);
+      // $(".modal-footer .row .col-6.text-end p").text(`$${subtotal}`);
+      $("#id_subtotal").text(`$${subtotal}`);
     } catch (error) {
       console.error("Error fetching cart data", error);
     }
   });
-  // var tempCartData;
+
   $("body").on("click", ".btn_cart_minus", function () {
     console.log("Minus button clicked");
     let value = parseInt($(this).siblings(".btn_cart_value").val(), 10);
     value = isNaN(value) ? 1 : value;
-    if (value > 0) {
+    if (value > 1) {
       value--;
-    }
-    console.log(`New value: ${value}`);
-    $(this).siblings(".btn_cart_value").val(value);
+      console.log(`New value: ${value}`);
+      $(this).siblings(".btn_cart_value").val(value);
 
-    const tempCartData = getTempCartData($(this));
+      tempCartData = getTempCartData($(this), "_minus");
+      console.log("Temp Cart idspc:", tempCartData);
+      const tempTotal = value * tempCartData[0].price;
+      subtotal -= tempCartData[0].price;
+      $("#id_subtotal").text(`$${subtotal}`);
+      console.log("Temp Cart total:", tempTotal);
+      console.log("Temp Cart id:", tempCartData[0]._id);
+      axios
+        .patch(`/temp_cart/${tempCartData[0]._id}`, {
+          Number: value,
+          total: tempTotal,
+        })
+        .then(function (response) {
+          // 请求成功后的操作
+          // alert("商品价格修改成功！");
+          console.log(response);
+
+          // 刷新当前页面 畫面會重新載入
+          // location.reload();
+
+          // 更新页面上的价格
+          updatedTotal = response.data.total;
+          $(`#${response.data.id_spc}_total`).text(`$${updatedTotal}`);
+        })
+        .catch(function (error) {
+          // 请求失败后的操作
+          alert("modal商品价格修改失败，请重试。");
+          console.error(error);
+        });
+    }
   });
 
   $("body").on("click", ".btn_cart_plus", function () {
     console.log("Plus button clicked");
-    var updatedTotal;
     value = parseInt($(this).siblings(".btn_cart_value").val(), 10);
     value = isNaN(value) ? 1 : value;
     value++;
     console.log(`New value: ${value}`);
-    // total = value * clickedProductInfo.price;
     $(this).siblings(".btn_cart_value").val(value);
-    var clickedButton = $(this);
 
-    tempCartData = getTempCartData($(this));
+    tempCartData = getTempCartData($(this), "_plus");
     console.log("Temp Cart idspc:", tempCartData);
     const tempTotal = value * tempCartData[0].price;
+    subtotal += tempCartData[0].price;
+    $("#id_subtotal").text(`$${subtotal}`);
     console.log("Temp Cart total:", tempTotal);
     console.log("Temp Cart id:", tempCartData[0]._id);
     axios
@@ -315,13 +345,7 @@ $(document).ready(function () {
 
         // 更新页面上的价格
         updatedTotal = response.data.total;
-
-        // document.getElementById(`${response.data.id_spc}_total`).textContent = `$${updatedTotal}`;
         $(`#${response.data.id_spc}_total`).text(`$${updatedTotal}`);
-        // $(`#${response.data.id_spc}_total`).text(`$${updatedTotal}`);
-
-        // document.getElementsByClassName(item_total).textContent = `$${updatedTotal}`;
-
       })
       .catch(function (error) {
         // 请求失败后的操作
@@ -331,9 +355,9 @@ $(document).ready(function () {
   });
 
   // 获取与按钮相关的 temp_cart 数据的函数
-  function getTempCartData(buttonElement) {
+  function getTempCartData(buttonElement, buttonType) {
     // 示例：获取产品 ID_spc
-    const productId = buttonElement.attr("id").replace("_plus", "");
+    const productId = buttonElement.attr("id").replace(`${buttonType}`, "");
     // 示例：根据产品 ID 从 AllTempCartData 中筛选相应的 temp_cart 数据
     const matchingData = AllTempCartData.filter(
       (item) => item.id_spc === productId
