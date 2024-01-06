@@ -80,11 +80,12 @@ router.get('/', async (req, res) => {
 router.patch('/:id', async (req, res) => {
   const productId = req.params.id;
   // const productId = req.body.id_spc;
+  const Special_Request = req.body.Special_Request;
   const newNumber = req.body.Number;
   const newTotal = req.body.total;
 
   try {
-    const product = await Product.findByIdAndUpdate(productId, { Number: newNumber ,total:newTotal}, { new: true }); // 更新价格
+    const product = await Product.findByIdAndUpdate(productId, {Special_Request:Special_Request, Number: newNumber ,total:newTotal}, { new: true }); // 更新价格
     res.json(product); // 返回更新后的商品数据作为 JSON 响应
 
     if (!product) {

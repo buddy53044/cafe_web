@@ -21,6 +21,9 @@ p{
   line-height: 2;
   font-family: "Inter-Regular", Helvetica, sans-serif;
 }
+a {
+  text-decoration: none !important;
+}
 
 textarea{
   resize: none !important;
@@ -34,6 +37,25 @@ textarea{
 .white{
   color: #fff !important;
 }
+
+/* 移除按钮点击时的轮廓效果 */
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus{
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.form-control:focus{
+  box-shadow: none !important;
+  /* outline: none !important; */
+  /* border-color: #fff !important; */
+}
+
 
 .btn-green{
   background-color: #404D3C !important;
@@ -63,11 +85,16 @@ textarea{
 }
 
 .navbar-logo {
-  width: 43px; /* 或您想要的任何尺寸 */
-  height: 43px; /* 使其與寬度相同以獲得一個完美的圓形 */
-  border-radius: 50%; /* 這將使圖片成為圓形 */
-  object-fit: cover; /* 這將確保圖片覆蓋整個區域並保持它的比例 */
-  border: 2px solid #fff; /* 可選，如果您想要一個邊框 */
+  width: 43px; 
+  /* 或您想要的任何尺寸 */
+  height: 43px; 
+  /* 使其與寬度相同以獲得一個完美的圓形 */
+  /* border-radius: 50%; */
+  /* 這將使圖片成為圓形 */
+  object-fit: cover;
+   /* 這將確保圖片覆蓋整個區域並保持它的比例 */
+  border: 2px solid #fff; 
+  /* 可選，如果您想要一個邊框 */
 }
 
 

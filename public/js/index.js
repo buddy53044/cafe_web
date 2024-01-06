@@ -1,28 +1,3 @@
-// document.addEventListener('DOMContentLoaded', function () {
-//   // 监听按钮点击事件
-//   document.getElementById('submitBtn').addEventListener('click', function () {
-//       // 获取输入框的值
-//       const email = document.getElementById('emailInput').value;
-
-//       // 发送POST请求到后端API
-//       axios.post('/Newsletter', { email: email })
-//           .then(function (response) {
-//               // 请求成功后的操作
-//               alert('訂閱成功！');
-//               console.log(response);
-//           })
-//           .catch(function (error) {
-//               // 请求失败后的操作
-//               alert('訂閱失敗，請重試。');
-//               console.error(error);
-//           });
-//   });
-
-//   // 阻止表单默认提交行为
-//   $('#footer_Newsletter_email').submit(function (e) {
-//       e.preventDefault(); // 阻止表单提交
-//   });
-// });
 
 
 $(document).ready(function () {

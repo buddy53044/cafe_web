@@ -1,14 +1,6 @@
-.btnallday{
-
-}
 
 
-.editcolor{
-  color: #60695D !important;
-}
-.editcolor:hover{
-  opacity: 70% !important;
-}
+
 
 
 
@@ -17,11 +9,6 @@
   object-fit: cover;
   width: 100% !important; /* 宽度100% */
   max-width: 100%; /* 最大宽度100%以确保在小屏幕上不会溢出 */
-}
-
-.card-hover:hover{
-    cursor: pointer;
-
 }
 
 
@@ -57,8 +44,3 @@
 
   
 
-
-  .carthover:hover{
-    cursor: pointer;
-    background-color: #5F695E !important;
-  }

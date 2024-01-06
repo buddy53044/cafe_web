@@ -10,6 +10,7 @@ $(document).ready(function () {
     .then(function (response) {
       const products = response.data; // 从响应中获取产品数据
       globalproducts = products;
+      console.log("globalproducts", globalproducts);
       console.log(products);
       // 使用对象来分组不同类型的产品
       const groupedProducts = {
@@ -34,8 +35,8 @@ $(document).ready(function () {
 
           productsOfType.forEach(function (product) {
             const productCard = `
-          <div class="col-12 col-md-6 col-lg-4 g-lg-4 cart-hover">
-            <div id="${product.name}" class="card shadow-lg d-flex justify-content-center align-items-center bg-light border-0" data-bs-toggle="modal" data-bs-target="#${product.id_spc}">
+          <div class="col-12 col-md-6 col-lg-4 g-lg-4">
+            <div id="${product.name}" class="card shadow-lg d-flex justify-content-center align-items-center bg-light border-0 cart-hover"  data-bs-toggle="modal" data-bs-target="#${product.id_spc}">
               <img src="img/menu/${product.name}.jpg" class="card-img-top img-fluid menu-img" alt="${product.name}">
               <div class="card-body">
                 <h5 class="card-title">${product.name}</h5>
@@ -75,8 +76,8 @@ $(document).ready(function () {
                                   <h4>${product.name}</h4>
                                 </div>
                                 <div class="col-12">
-                                  <p class="d-block d-lg-none">${product.description}</p>
-                                  <p class="d-none d-lg-block">${product.short_description}</p>
+                                  <p class="d-block d-lg-none">${product.short_description}</p>
+                                  <p class="d-none d-lg-block">${product.description}</p>
                                 </div>
                               </div>
                             </div>
@@ -99,7 +100,7 @@ $(document).ready(function () {
                                 </div>
                               </div>
                               <div class="col-12 col-lg-8">
-                                <button id="${product.id_spc}_btn" type="button" class="btn btn-success btn-green w-100 btn-add-order" data-bs-dismiss="modal" aria-label="Close">Add to my order $${product.price}</button>
+                                <button id="${product.id_spc}_btn" type="button" class="btn btn-success btn-green w-100 btn-add-order btn_hover_5F695E" data-bs-dismiss="modal" aria-label="Close">Add to my order $${product.price}</button>
                               </div>
                             </div>
                           </div>
@@ -151,6 +152,7 @@ $(document).ready(function () {
   $("body").on("click", ".btn-add-order", function () {
     const name = clickedProductInfo.name;
     const price = clickedProductInfo.price;
+    // $(".cart_span_number").text(AllTempCartData.length);
     const Special_Request = $(this)
       .closest(".modal")
       .find(".modal-body")
@@ -175,7 +177,7 @@ $(document).ready(function () {
       })
       .then(function (response) {
         // 请求成功后的操作
-        alert("商品添加成功！");
+        // alert("商品添加成功！");
         console.log(response);
       })
       .catch(function (error) {
@@ -190,10 +192,10 @@ $(document).ready(function () {
     clickedProductId = $(this).attr("data-bs-target").substring(1);
 
     clickedProductInfo = getProductDataById(clickedProductId);
-    // console.log(clickedProductInfo);
+    console.log(clickedProductInfo);
 
     getProductDataById(clickedProductId);
-    // console.log(clickedProductId);
+    console.log(clickedProductId);
   });
 
   function getProductDataById(productId) {
@@ -224,55 +226,69 @@ $(document).ready(function () {
     $("#cartContent").empty();
 
     try {
-      // 从 temp_cart 获取数据
-      const response = await axios.get("/temp_cart");
-      const cartData = response.data;
-      AllTempCartData = cartData;
-      // 更新 My Order 的数量
-      const cartCount = cartData.length;
-      $(".modal-title#cartmodallabel").text(`My Order(${cartCount})`);
+        // 从 temp_cart 获取数据
+        const response = await axios.get("/temp_cart");
+        const cartData = response.data;
+        AllTempCartData = cartData;
+        console.log("AllTempCartData", AllTempCartData);
+        // 更新 My Order 的数量
+        const cartCount = cartData.length;
+        $(".modal-title#cartmodallabel").text(`My Order(${cartCount})`);
 
-      // 根据返回的 cartData 动态生成内容并添加到 cartContent
-      cartData.forEach((item) => {
-        const cartItemHTML = `
-          <div class="row py-2 cart_content_item ">
-            <div class="col-3 nopadding d-flex align-content-center ">
-              <div class="input-group align-content-center">
-                <button id="${item.id_spc}_minus", class="btn btn-outline-secondary border-dark px-1 btn_cart_minus" type="button">-</button>
-                <input id="${item.id_spc}_value", type="text" class="form-control text-center border-dark nopadding border-start-0 btn_cart_value" value="${item.Number}">
-                <button id="${item.id_spc}_plus", class="btn btn-outline-secondary border-dark px-1 btn_cart_plus" type="button">+</button>
-              </div>
-            </div>
-            <div class="col-6 ">
-              <div class="row">
-                <div class="col-12 ">
-                  <p class=" nopadding">${item.name}</p>
-                </div>
-                <div class="col" style="font-size: 14px;">
-                  <p class="editcolor nopadding">Edit</p>
-                </div>
-                <div class="col" style="font-size: 14px;">
-                  <p class="editcolor nopadding">Remove</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-3 text-end align-self-center">
-              <p id="${item.id_spc}_total" class=" nopadding item_total">$${item.total}</p>
-            </div>
-          </div>
-        `;
-        // 将生成的 HTML 添加到 cartContent
-        $("#cartContent").append(cartItemHTML);
-      });
+        var tempProduct_id_spc;
+        // 遍历 tempCartData
+        cartData.forEach((item) => {
+            // 查找匹配的产品
+            for (const product of globalproducts) {
+                if (product.name === item.name) {
+                    // 设置 data-bs-target
+                    // const editButton = $(`#${item.id_spc}_edit`);
+                    // editButton.attr("data-bs-target", `#${product.id_spc}`);
+                    // editButton.attr("data-bs-toggle", "modal");  // 添加这一行
+                    tempProduct_id_spc=product.id_spc;
+                    break;  // 找到匹配项后，跳出内部循环
+                }
+            }
 
-      // 更新 Subtotal
-      subtotal = cartData.reduce((acc, item) => acc + item.total, 0);
-      // $(".modal-footer .row .col-6.text-end p").text(`$${subtotal}`);
-      $("#id_subtotal").text(`$${subtotal}`);
+            const cartItemHTML = `
+                <div class="row py-2 cart_content_item ">
+                    <div class="col-3 nopadding d-flex align-content-center ">
+                        <div class="input-group align-content-center">
+                            <button id="${item.id_spc}_minus" class="btn btn-outline-secondary border-dark px-1 btn_cart_minus" type="button">-</button>
+                            <input id="${item.id_spc}_value" type="text" class="form-control text-center border-dark nopadding border-start-0 btn_cart_value" value="${item.Number}">
+                            <button id="${item.id_spc}_plus" class="btn btn-outline-secondary border-dark px-1 btn_cart_plus" type="button">+</button>
+                        </div>
+                    </div>
+                    <div class="col-6 ">
+                        <div class="row">
+                            <div class="col-12 ">
+                                <p class="nopadding">${item.name}</p>
+                            </div>
+                            <div class="col" style="font-size: 14px;">
+                                <button id="${item.id_spc}_edit" type="button" class="btn btn-sm btn-outline-dark  btn_edit" data-bs-toggle="modal" data-bs-target="#${tempProduct_id_spc}" data-bs-dismiss="modal" aria-label="Close" style="font-size: 14px;">edit</button>
+                            </div>
+                            <div class="col" style="font-size: 14px;">
+                                <button id="${item.id_spc}_remove" type="button" class="btn btn-sm btn-outline-dark btn_remove" style="font-size: 14px;">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 text-end align-self-center">
+                        <p id="${item.id_spc}_total" class="nopadding item_total">$${item.total}</p>
+                    </div>
+                </div>
+            `;
+            // 将生成的 HTML 添加到 cartContent
+            $("#cartContent").append(cartItemHTML);
+        });
+
+        // 更新 Subtotal
+        subtotal = cartData.reduce((acc, item) => acc + item.total, 0);
+        $("#id_subtotal").text(`$${subtotal}`);
     } catch (error) {
-      console.error("Error fetching cart data", error);
+        console.error("Error fetching cart data", error);
     }
-  });
+});
+
 
   $("body").on("click", ".btn_cart_minus", function () {
     console.log("Minus button clicked");
@@ -314,7 +330,7 @@ $(document).ready(function () {
         });
     }
   });
-
+var tempTotal;
   $("body").on("click", ".btn_cart_plus", function () {
     console.log("Plus button clicked");
     value = parseInt($(this).siblings(".btn_cart_value").val(), 10);
@@ -325,7 +341,7 @@ $(document).ready(function () {
 
     tempCartData = getTempCartData($(this), "_plus");
     console.log("Temp Cart idspc:", tempCartData);
-    const tempTotal = value * tempCartData[0].price;
+    tempTotal = value * tempCartData[0].price;
     subtotal += tempCartData[0].price;
     $("#id_subtotal").text(`$${subtotal}`);
     console.log("Temp Cart total:", tempTotal);
@@ -354,6 +370,95 @@ $(document).ready(function () {
       });
   });
 
+  $("body").on("click", ".btn_remove", async function () {
+    console.log("btn_remove clicked");
+
+    tempCartData = getTempCartData($(this), "_remove");
+    console.log("Temp Cart idspc:", tempCartData);
+
+    axios
+      .delete(`/temp_cart/${tempCartData[0]._id}`)
+      .then(function (response) {
+        // 请求成功后的操作
+        // alert("刪除成功！");
+        console.log(response);
+      })
+      .catch(function (error) {
+        // 请求失败后的操作
+        alert("刪除失败，请重试。");
+        console.error(error);
+      });
+
+    $("#cartContent").empty();
+    try {
+      // 从 temp_cart 获取数据
+      const response = await axios.get("/temp_cart");
+      const cartData = response.data;
+      AllTempCartData = cartData;
+      // 更新 My Order 的数量
+      const cartCount = cartData.length;
+      $(".modal-title#cartmodallabel").text(`My Order(${cartCount})`);
+
+      // 根据返回的 cartData 动态生成内容并添加到 cartContent
+      cartData.forEach((item) => {
+        const cartItemHTML = `
+            <div class="row py-2 cart_content_item ">
+              <div class="col-3 nopadding d-flex align-content-center ">
+                <div class="input-group align-content-center">
+                  <button id="${item.id_spc}_minus", class="btn btn-outline-secondary border-dark px-1 btn_cart_minus" type="button">-</button>
+                  <input id="${item.id_spc}_value", type="text" class="form-control text-center border-dark nopadding border-start-0 btn_cart_value" value="${item.Number}">
+                  <button id="${item.id_spc}_plus", class="btn btn-outline-secondary border-dark px-1 btn_cart_plus" type="button">+</button>
+                </div>
+              </div>
+              <div class="col-6 ">
+                <div class="row">
+                  <div class="col-12 ">
+                    <p class=" nopadding">${item.name}</p>
+                  </div>
+                  <div class="col" style="font-size: 14px;">
+                  <button id="${item.id_spc}_edit" type="button" class="btn btn-sm btn-outline-dark btn_edit"  style="font-size: 14px;">edit</button>
+                  </div>
+                  <div class="col" style="font-size: 14px;">
+                    <button id="${item.id_spc}_remove" type="button" class="btn btn-sm btn-outline-dark btn_remove" style="font-size: 14px;">Remove</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 text-end align-self-center">
+                <p id="${item.id_spc}_total" class=" nopadding item_total">$${item.total}</p>
+              </div>
+            </div>
+          `;
+        // 将生成的 HTML 添加到 cartContent
+        $("#cartContent").append(cartItemHTML);
+      });
+
+      // 更新 Subtotal
+      subtotal = cartData.reduce((acc, item) => acc + item.total, 0);
+      // $(".modal-footer .row .col-6.text-end p").text(`$${subtotal}`);
+      $("#id_subtotal").text(`$${subtotal}`);
+    } catch (error) {
+      console.error("Error fetching cart data", error);
+    }
+  });
+
+  $("body").on("click", ".btn_edit", function () {
+    // 當卡片被點擊時，將相應的 product.id_spc 賦值給全局變數
+    clickedProductId = $(this).attr("data-bs-target").substring(1);
+    clickedProductInfo = getProductDataById(clickedProductId);
+    
+    console.log(clickedProductInfo);
+
+    getProductDataById(clickedProductId);
+    // console.log(clickedProductId);
+    // console.log("btn_edit clicked",AllTempCartData);
+    var cartData= getTempCartData($(this), "_edit");
+    console.log("EditCartData",cartData);
+
+
+    $(".btn-value").val(value);
+    $(".btn-add-order").text(`Add to my order $${tempTotal}`); // 更新按鈕內容
+  });
+
   // 获取与按钮相关的 temp_cart 数据的函数
   function getTempCartData(buttonElement, buttonType) {
     // 示例：获取产品 ID_spc
@@ -366,40 +471,68 @@ $(document).ready(function () {
     return matchingData;
   }
 
-  // // 為動態生成的元素綁定事件
-  // $("body").on("click", "#modal_minus", function () {
-  //   console.log("Minus button clicked");
-  //   let value = parseInt($("#modal_value").val(), 10);
-  //   value = isNaN(value) ? 1 : value;
-  //   if (value > 0) {
-  //     value--;
-  //   }
-  //   console.log(`New value: ${value}`);
-  //   $("#modal_value").val(value);
-  //   // $("#modal_value").text(value);
-  //   // 更新網頁上的內容
-  //   // updateProductPrice(value);
-  // });
+  $("body").on("click", "#id_checkout", function () {
+    alert("Checkout button clicked");
+    var note = $("#menu_orderNote").val();
+    axios
+      .post("/temp_note", {
+        note: note,
+      })
+      .then(function (response) {
+        // 请求成功后的操作
+        // alert("商品添加成功！");
+        console.log(response);
+      })
+      .catch(function (error) {
+        // 请求失败后的操作
+        alert("商品添加失败，请重试。");
+        console.error(error);
+      });
+  });
 
-  // $("body").on("click", "#modal_plus", function () {
-  //   console.log("Plus button clicked");
-  //   let value = parseInt($("#modal_value").val(), 10);
-  //   value = isNaN(value) ? 0 : value;
-  //   value++;
-  //   console.log(`New value: ${value}`);
-  //   $("#modal_value").val(value);
-  //   // $(`#modal_value`).text(`${value}`);
-
-  //   // 更新網頁上的內容
-  //   // updateProductPrice(value);
-  // });
-
-  // 更新網頁上的商品價格
-  // function updateProductPrice(newPrice) {
-  //   const productId = $("#modal_minus").closest('.modal').attr('id');
-  //   $(`#${productId}`).find('.nopadding').text(`${newPrice}`);
-  // }
+  // axios
+  //   .get("/temp_note")
+  //   .then((response) => {
+  //     // const cartData = response.data;
+  //     // AllTempCartData = cartData;
+  //     console.log("response.data", response.data[0].note);
+  //     // 更新 My Order 的数量
+  //     // const cartCount = cartData.length;
+  //     $("#menu_orderNote").text(response.data[0].note);
+  //   })
+  //   .catch((error) => {
+  //     console.error("Error fetching cart data", error);
+  //   });
 
   // const myModal = new bootstrap.Modal("#cartmodal");
   // myModal.show();
 });
+
+// const cartItemHTML = `
+// <div class="row py-2 cart_content_item ">
+//   <div class="col-3 nopadding d-flex align-content-center ">
+//     <div class="input-group align-content-center">
+//       <button id="${item.id_spc}_minus", class="btn btn-outline-secondary border-dark px-1 btn_cart_minus" type="button">-</button>
+//       <input id="${item.id_spc}_value", type="text" class="form-control text-center border-dark nopadding border-start-0 btn_cart_value" value="${item.Number}">
+//       <button id="${item.id_spc}_plus", class="btn btn-outline-secondary border-dark px-1 btn_cart_plus" type="button">+</button>
+//     </div>
+//   </div>
+//   <div class="col-6 ">
+//     <div class="row">
+//       <div class="col-12 ">
+//         <p class=" nopadding">${item.name}</p>
+//       </div>
+//       <div class="col" style="font-size: 14px;">
+//         <p class="editcolor nopadding">Edit</p>
+//       </div>
+//       <div class="col" style="font-size: 14px;">
+//          <p class="editcolor nopadding">Remove</p>
+
+//       </div>
+//     </div>
+//   </div>
+//   <div class="col-3 text-end align-self-center">
+//     <p id="${item.id_spc}_total" class=" nopadding item_total">$${item.total}</p>
+//   </div>
+// </div>
+// `;

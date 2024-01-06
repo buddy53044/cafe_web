@@ -10,17 +10,9 @@
 
 
 
-.btnallday{
-
-}
 
 
-.editcolor{
-  color: #60695D !important;
-}
-.editcolor:hover{
-  opacity: 70% !important;
-}
+
 
 
 
@@ -66,10 +58,7 @@
   
 
 
-  .cart-hover:hover{
-    cursor: pointer;
-    /* background-color: #5F695E !important; */
-  }
+
 
 
 

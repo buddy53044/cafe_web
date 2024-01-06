@@ -1,0 +1,73 @@
+.editcolor {
+    color: #60695D !important;
+}
+
+.editcolor:hover {
+    opacity: 70% !important;
+}
+
+.cart-hover {
+    transition: background-color 0.5s !important;
+}
+
+.cart-hover:hover {
+    cursor: pointer;
+    background-color: #D9D9D9 !important;
+}
+
+.editcolor {
+    color: #60695D !important;
+}
+
+.editcolor:hover {
+    opacity: 70% !important;
+}
+
+.btn_hover_5F695E {
+    transition: background-color 0.5s !important;
+}
+
+.btn_hover_5F695E:hover {
+    background-color: #5F695E !important;
+    color: white !important;
+}
+
+.input-email {
+    transition: background-color 0.5s !important;
+}
+
+.input-email:hover {
+    background-color: #667163 !important;
+}
+
+.input-email input:focus {
+    outline: 1px solid #ffffff !important;
+}
+
+.join {
+    transition: background-color 0.5s !important;
+}
+
+.join:hover {
+    color: #ffffff !important;
+    background-color: #5F695E !important;
+}
+
+.btn_hover_bg_D9D9D9:hover {
+    background-color: #D9D9D9 !important;
+    color: black !important;
+}
+
+.all_day_hover:hover {
+    background-color: white !important;
+}
+
+.all_day_hover:focus {
+    background-color: white !important;
+}
+
+.input-email:focus {
+    /* box-shadow: none !important; */
+    outline: none !important;
+    border-color: #fff !important;
+}

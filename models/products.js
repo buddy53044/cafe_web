@@ -22,14 +22,6 @@ const productSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  // name_nospace: {
-  //   type: String,
-  //   default: function () {
-  //     // 将name字段中的空格替换为下划线
-  //     return this.name.replace(/\s+/g, '_');
-  //   }
-  // },
-
   id_spc: {
     type: String,
     default: function () {
