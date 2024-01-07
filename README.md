@@ -1,8 +1,8 @@
 # cafe_web
 npm install
 
-npm start
 
+npm start
 
 menu edit remove
 
