@@ -129,9 +129,6 @@ $(document).ready(function () {
         alert("商品添加失败，请重试。");
         console.error(error);
       });
-
-
-
       axios
       .post("/temp_note/clear", {
       })

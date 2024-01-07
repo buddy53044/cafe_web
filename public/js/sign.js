@@ -28,10 +28,6 @@ $(document).ready(function () {
             alert("註冊失败，请重试。");
             console.error(error);
           });
-    
-    
 
-    
-          
       });
 });

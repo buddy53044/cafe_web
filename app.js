@@ -24,14 +24,14 @@ db.once('open', async function() {
   console.log('Connected to the database');
 
     // 在连接数据库后清空 Temp_cart and Temp_note
-    // try {
-    //   const Temp_cart_result = await TempCart.deleteMany({});
-    //   const Temp_note_result = await Tempnote.deleteMany({});
+    try {
+      const Temp_cart_result = await TempCart.deleteMany({});
+      const Temp_note_result = await Tempnote.deleteMany({});
 
-    //   console.log('Temp_cart and Temp__note emptied');
-    // } catch (error) {
-    //   console.error('清空 Temp_cart 内容时出现错误:', error.message);
-    // }
+      console.log('Temp_cart and Temp__note emptied');
+    } catch (error) {
+      console.error('清空 Temp_cart 内容时出现错误:', error.message);
+    }
     
 });
 

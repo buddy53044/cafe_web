@@ -23,12 +23,12 @@ $(document).ready(function () {
       data: { name: name, phone: phone, email: email, message: message },
       success: function (response) {
         // 请求成功后的操作
-        alert("訂閱成功！");
+        alert("發送成功！");
         console.log(response);
       },
       error: function (error) {
         // 请求失败后的操作
-        alert("訂閱失敗，請重試。");
+        alert("發送失敗，請重試。");
         console.error(error);
       },
     });

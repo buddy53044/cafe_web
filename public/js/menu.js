@@ -472,7 +472,7 @@ var tempTotal;
   }
 
   $("body").on("click", "#id_checkout", function () {
-    alert("Checkout button clicked");
+    // alert("Checkout button clicked");
     var note = $("#menu_orderNote").val();
     axios
       .post("/temp_note", {
@@ -490,23 +490,28 @@ var tempTotal;
       });
   });
 
-  // axios
-  //   .get("/temp_note")
-  //   .then((response) => {
-  //     // const cartData = response.data;
-  //     // AllTempCartData = cartData;
-  //     console.log("response.data", response.data[0].note);
-  //     // 更新 My Order 的数量
-  //     // const cartCount = cartData.length;
-  //     $("#menu_orderNote").text(response.data[0].note);
-  //   })
-  //   .catch((error) => {
-  //     console.error("Error fetching cart data", error);
-  //   });
+  axios
+  .get("/temp_note")
+  .then((response) => {
+    if (response.data[0].note) {
+      // 如果note不为空，执行以下操作
+      console.log("response.data", response.data[0].note);
+      // 更新 My Order 的数量
+      // const cartCount = cartData.length;
+      $("#menu_orderNote").text(response.data[0].note);
+    } else {
+      console.log("Note is empty. No further action.");
+    }
+  })
+  .catch((error) => {
+    console.error("Error fetching cart data", error);
+  });
 
+
+  });
+  
   // const myModal = new bootstrap.Modal("#cartmodal");
   // myModal.show();
-});
 
 // const cartItemHTML = `
 // <div class="row py-2 cart_content_item ">
