@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>提交数据</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+    <input type="text" id="productName" name="productName" placeholder="輸入商品名稱">
+    <input type="number" id="productPrice" placeholder="輸入商品價格">
+    <input type="text" id="productType" placeholder="輸入商品type">
+    <input type="text" id="productShort_description" placeholder="輸入商品short_description">
+    <input type="text" id="productDescription" placeholder="輸入商品description">
+    <button id="submitBtn">提交到数据库</button>
+
+    <br>
+
+    <!-- 修改這裡的form標籤 -->
+    <form id="uploadForm" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Choose a .jpg file</label>
+            <input class="form-control" type="file" id="formFile" name="file" required>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="uploadFile()">Upload</button>
+    </form>
+    <br>
+
+    <br>
+    <!-- 添加输入字段和修改按钮 -->
+    <input type="text" id="_id" placeholder="输入_id">
+    <input type="text" id="newName" placeholder="输入新Name">
+    <input type="number" id="newPrice" placeholder="输入新价格">
+    <input type="text" id="newType" placeholder="输入新type">
+    <input type="text" id="newShort_description" placeholder="输入新short_description">
+    <input type="text" id="newDescription" placeholder="输入新description">
+
+    <button id="updateBtn">修改內容</button>
+
+    <br>
+    <!-- 添加输入字段和删除按钮 -->
+    <input type="text" id="deleteProductId" placeholder="输入要删除的商品ID">
+    <button id="deleteBtn">删除商品</button>
+
+    <div class=""></div>
+
+
+
+    <h1>商品列表</h1>
+    <ul id="productList">
+        <!-- 商品数据将在这里显示 -->
+    </ul>
+
+    <script>
+
+        // 监听按钮点击事件
+        document.getElementById('submitBtn').addEventListener('click', function () {
+            // 获取输入框的值
+            const name = document.getElementById('productName').value;
+            const price = document.getElementById('productPrice').value;
+            const type = document.getElementById('productType').value;
+            const short_description = document.getElementById('productShort_description').value;
+            const description = document.getElementById('productDescription').value;
+
+            // 发送POST请求到后端API post
+            axios.post('/products', { name: name, price: price, type: type, short_description: short_description, description: description })
+                .then(function (response) {
+                    // 请求成功后的操作
+                    alert('商品添加成功！');
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    // 请求失败后的操作
+                    alert('商品添加失败，请重试。');
+                    console.error(error);
+                });
+        });
+
+        // 获取商品列表数据 get
+        axios.get('/products')
+            .then(function (response) {
+                // 请求成功后的操作
+                const products = response.data; // 假设返回的数据是一个数组
+                console.log(products);
+                // 获取用于显示商品列表的<ul>元素
+                const productList = document.getElementById('productList');
+
+                // 遍历商品数据并创建列表项
+                products.forEach(function (product) {
+                    const listItem = document.createElement('li');
+                    const productInfoDiv = document.createElement('div');
+
+                    productInfoDiv.innerHTML = `name：${product.name}<br>
+                    price：${product.price}<br>
+                    _id：${product._id}<br>
+                    createdAt：${product.createdAt}<br>
+                    id_spc：${product.id_spc}<br>
+                    type：${product.type}<br>
+                    short_description: ${product.short_description}<br>
+                    description: ${product.description}`;
+
+                    listItem.setAttribute("id", product._id);
+                    listItem.appendChild(productInfoDiv);
+                    productList.appendChild(listItem);
+                });
+
+            })
+            .catch(function (error) {
+                // 请求失败后的操作
+                alert('获取商品列表失败，请重试。');
+                console.error(error);
+            });
+
+        // 监听按钮点击事件 update 
+        document.getElementById('updateBtn').addEventListener('click', function () {
+            // 获取商品ID和新价格
+            var productId = document.getElementById('_id').value;
+            const newName = document.getElementById('newName').value;
+            const newPrice = document.getElementById('newPrice').value;
+            const newType = document.getElementById('newType').value;
+            const newShort_description = document.getElementById('newShort_description').value;
+            const newDescription = document.getElementById('newDescription').value;
+
+                // 构建要更新的对象
+    const updateObject = {};
+    if (newName.trim() !== "") updateObject.name = newName;
+    if (!isNaN(newPrice) && newPrice.trim() !== "") updateObject.price = newPrice;
+    if (newType.trim() !== "") updateObject.type = newType;
+    if (newShort_description.trim() !== "") updateObject.short_description = newShort_description;
+    if (newDescription.trim() !== "") updateObject.description = newDescription;
+
+            // 发送PUT或PATCH请求到后端API
+            axios.patch(`/products/${productId}`,updateObject)
+                .then(function (response) {
+                    // 请求成功后的操作
+                    alert('商品价格修改成功！');
+                    console.log(response);
+
+                    // 刷新当前页面 畫面會重新載入
+                    //location.reload(); 
+
+                    // 更新页面上的价格
+                    const updatedPrice = response.data.price;
+
+                })
+                .catch(function (error) {
+                    // 请求失败后的操作
+                    alert('frond商品价格修改失败，请重试。');
+                    console.error(error);
+                });
+        });
+
+        // 监听按钮点击事件 delete
+        document.getElementById('deleteBtn').addEventListener('click', function () {
+            // 获取要删除的商品ID
+            const productIdToDelete = document.getElementById('deleteProductId').value;
+            console.log("productIdToDelete", productIdToDelete);
+
+            // 发送DELETE请求到后端API，使用特定商品的ID作为URL参数
+            axios.delete(`/products/${productIdToDelete}`)
+                .then(function (response) {
+                    console.log("response", response);
+                    console.log("inproductIdToDelete", productIdToDelete);
+                    // 请求成功后的操作
+                    alert('商品删除成功！');
+                    console.log(response);
+
+                    // 在前端移除被删除的商品列表项
+                    const deletedItem = document.getElementById(productIdToDelete);
+                    if (deletedItem) {
+                        deletedItem.remove();
+                    }
+                })
+                .catch(function (error) {
+                    // 请求失败后的操作
+                    alert('frond商品删除失败，请重试。');
+                    console.error(error);
+                });
+        });
+
+        function uploadFile() {
+            // 获取文件输入框
+            const fileInput = document.getElementById('formFile');
+            // 创建FormData对象
+            const formData = new FormData();
+            // 将文件添加到FormData对象中
+            formData.append('file', fileInput.files[0]);
+            // 使用Axios发送文件上传请求
+            axios.post('/products/upload', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            })
+                .then(function (response) {
+                    // 文件上传成功后的操作
+                    alert('文件上传成功！');
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    // 文件上传失败后的操作
+                    alert('文件上传失败，请重试。');
+                    console.error(error);
+                });
+        }
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

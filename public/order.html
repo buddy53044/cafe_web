@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <link rel="stylesheet" href="css/globals.css" />
+  <link rel="stylesheet" href="css/order_styles.css" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="css/hover.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+
+  <title>Order</title>
+</head>
+
+<body>
+
+  <!-- header -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <div class="d-flex align-items-center">
+          <img class="navbar-logo" src="img/logo.png" alt="Logo" />
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="menu.html">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="order.html">Online Order</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Log In</a>
+          </li>
+        </ul>
+        <!-- <div class="d-flex">
+            <img class="login-icon" src="img/login-1.png" alt="Log In" />
+            <a class="nav-link" href="#">Log In</a>
+        </div> -->
+      </div>
+    </div>
+  </nav>
+
+  <!-- header -->
+
+  <div class="container-fluid banner1-title py-5 ">
+    <div class="row">
+      <div class="col text-center">
+        <h1>Online Order</h1>
+        <p>
+          In today's fast-paced world, we understand the importance of convenience and efficiency. <br>
+          That's why we've made our products and services available at your fingertips. <br>
+          Whether you're craving your favorite item or need product and service quickly, our online ordering system is
+          designed for ease and speed.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class=" container-fuild ">
+
+
+    <div class="row g-5 mx-1 mx-md-5 my-md-3">
+      <div class="col pt-3">
+        <h3>Checkout</h3>
+
+        <!-- <p>Already have an account? Log in for a faster checkout.</p> -->
+        <p> </p>
+        <h3>1. Delivery Method</h3>
+
+        <p class="nopadding">Pickup from</p>
+        <form class="row g-0 pb-2">
+          <div class="col-12">
+            <input id="input_address" type="text" placeholder="台北市忠孝東路三段一號"
+              class="form-control px-2 textgrayplaceholder ">
+          </div>
+        </form>
+        <p class="nopadding">Pickup time</p>
+        <p class="textgray ">ASAP(in 15 minutes)</p>
+
+
+        <h3>2. Contact Information</h3>
+        <form class="row g-3 pb-2">
+
+          <div class="col-12">
+            <label for="input_name" class="form-label">Name</label>
+            <input id="input_name" type="text" placeholder="" class="form-control px-2 textgrayplaceholder ">
+          </div>
+
+          <div class="col-12">
+            <label for="input_phone" class="form-label">Phone</label>
+            <input id="input_phone" type="text" placeholder="" class="form-control px-2 textgrayplaceholder ">
+          </div>
+
+          <div class="col-12">
+            <label for="input_email" class="form-label">Email</label>
+            <input id="input_email" type="text" placeholder="" class="form-control px-2 textgrayplaceholder ">
+          </div>
+
+        </form>
+
+        <h3 class=" pt-2">3. Payments</h3>
+
+        <h3 class=" pt-2">4. Review and Place Order</h3>
+        <p>Please review the details above and place the order.</p>
+        <button type="button" id="id_btn_order" class="btn btn-success btn-green btn_order btn_hover_5F695E"
+          data-bs-toggle="modal" data-bs-target="#submit_confirm">Submit Order</button>
+
+
+      </div>
+
+
+      <div class="col pt-3">
+
+        <div class="container p-0 p-md-5">
+          <a href="menu.html">
+            <p class="text-end d-none d-md-block btn">Back to menu</p>
+          </a>
+
+          <div class="card border-dark mb-3">
+            <div id="orderTitle" class="card-header bg-white border-0 py-3 h4">My Order(0)</div>
+            <div class="card-body text-dark">
+              <div id="orderContent">
+                <!-- <div class="row">
+                <div class="col-2 pe-0">
+                  <p>1x</p>
+
+                </div>
+                <div class="col-8 p-0">
+                  <p>Daily Muffin</p>
+
+                </div>
+                <div class="col-2 ps-0">
+                  <p class=" text-end">$6</p>
+
+                </div>
+              </div> -->
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <p>Add Order Notes</p>
+                </div>
+                <div class="col-12">
+                  <form class="row g-0 pb-2">
+                    <div class="col-12 pb-2">
+                      <textarea id="input_note" class="form-control px-2 textgrayplaceholder border-dark "
+                        placeholder="Please add order notes." rows="2"></textarea>
+                    </div>
+                  </form>
+
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <p>Subtotal</p>
+                  </div>
+                  <div id="id_subtotal" class="col-6 text-end">
+                    <p>$18</p>
+                  </div>
+                </div>
+
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+
+
+    </div>
+
+
+
+
+    <!-- footer -->
+
+    <div class="container-fluid footer1 white">
+      <div class="row justify-content-around ">
+
+        <div class="col-12 col-md-4 nopadding my-md-5  my-3 text-center text-md-start">
+          <h4>Newsletter</h4>
+          <p>Stay up to date with all the latest from cafe</p>
+          <p class="m-0">Email</p>
+          <form id="footer_Newsletter_email" class="row g-1">
+            <div class="col-7 col-md-8 offset-1 offset-md-0">
+              <!-- <label for="inputPassword2" class="visually-hidden">Password</label> -->
+              <!-- <input type="password" class="form-control" id="inputPassword2" placeholder="Password"> -->
+              <input type="email" id="emailInput" placeholder="Enter your email"
+                class="input-email form-control textgrayplaceholder">
+            </div>
+            <div class="col-2 col-md-4 ">
+              <button type="submit" id="submitBtn" class="join btn btn-outline-light ">Join</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-12 col-md-4 nopadding my-md-5 my-3  text-center text-md-start">
+          <h4>Talk to Us</h4>
+          <p class="m-0">Tel: 0965580712</p>
+          <p>t109360213@ntut.org.tw</p>
+          <p>106344 台北市忠孝東路三段一號</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer2 text-center">
+      <p class="nopadding">@2023 by jack</p>
+    </div>
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/order.js"></script>
+
+</body>
+
+</html>
+
+
+<!-- submitModal -->
+<div class="modal fade" id="submit_confirm" tabindex="-1" aria-labelledby="submit_confirm_label" aria-hidden="true">
+  <div class="modal-dialog  modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0 ">
+        <!-- <h5 class="modal-title" id="submit_confirm_label">Modal title</h5> -->
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <div class=" container">
+          <h3>Thank you for your order.</h3>
+          <p>Thank you for your order. We're preparing your meal.</p>
+          <button type="button" class="btn btn-success btn-green w-100" data-bs-dismiss="modal" aria-label="Close">Got
+            it</button>
+
+
+        </div>
+
+
+
+      </div>
+      <div class="modal-footer border-0">
+        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>

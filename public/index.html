@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/index_styles.css" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/hover.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+
+    <title>Index</title>
+</head>
+
+<body>
+
+  <!-- header -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <div class="d-flex align-items-center">
+          <img class="navbar-logo" src="img/logo.png" alt="Logo" />
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="menu.html">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="order.html">Online Order</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Log In</a>
+          </li>
+        </ul>
+        <!-- <div class="d-flex">
+            <img class="login-icon" src="img/login-1.png" alt="Log In" />
+            <a class="nav-link" href="#">Log In</a>
+        </div> -->
+      </div>
+    </div>
+  </nav>
+
+  <!-- header -->
+
+
+    <div class="card bg-dark text-white text-center rounded-0">
+        <!-- 小屏幕下使用的图片 -->
+        <img src="img/index/sm-main-card.png" class="card-img main-card d-block d-md-none" alt="...">
+        <!-- 中等屏幕及以上使用的图片 -->
+        <img src="img/index/c837a6-3072f98b6961440ca0c47ce752c6d052-mv2-1.png"
+            class="card-img main-card d-none d-md-block" alt="...">
+        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+            <div class="container">
+                <div class="row text-start g-4 ">
+                    <div class="col-12 pb-md-2">
+                        <p class="card-text">Cafe&Restaurant</p>
+                    </div>
+                    <div class="col-12 pb-md-2">
+                        <h1 class="card-title ">Delicious Eat&Coffee</h1>
+                    </div>
+                    <div class="col-12 ">
+                        <a class="" href="menu.html">
+                            <button type="button" class="btn btn-outline-light btn_hover_5F695E">Order now</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="card bg-dark text-white text-center">
+        <img src="img/sm-main-card.png" class="card-img main-card d-block d-md-none" alt="...">
+        <img src="img/c837a6-3072f98b6961440ca0c47ce752c6d052-mv2-1.png" class="card-img main-card d-none d-md-block" alt="...">
+        <div class="card-img-overlay d-flex justify-content-center align-items-end">
+          <div class="container">
+            <div class="row flex-column text-start g-4 ">
+              <div class="col-md-4">
+                <p class="card-text">Cafe&Restaurant</p>
+              </div>
+              <div class="col-md-4 ">
+                <h1 class="card-title ">Delicious Eat&Coffee</h1>
+              </div>
+              <div class="col-md-4">
+                <button type="button" class="btn btn-outline-light">Order now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       -->
+
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner bg-green-5F695E py-1 rounded-0">
+            <div class="carousel-item active" data-bs-interval="5000">
+                <div class="">
+                    <p class="nopadding white text-center">Weekend Brunch | Saturday 9am - 2pm</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <div class="">
+                    <p class="nopadding white text-center">Daily Deal | Coffee & Pastry $3.99</p>
+                </div>
+            </div>
+
+        </div>
+        <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div
+                class="col-12 col-md-6 col-lg-8 text-center nopadding  d-flex flex-column align-items-center justify-content-center">
+                <div class="container text-start ">
+                    <div class="row">
+                        <div class="col offset-lg-1 ">
+                            <h1 class="group1-bestbite">Eat.</h1>
+                            <p>Breakfast, Lunch and Artisanal Pastries</p>
+                            <p>
+                                offers a selection of breakfast and lunch options, including handmade pastries, designed
+                                to delight the senses at any time of the day.
+                            </p>
+                            <a href="menu.html" class="btn btn-outline-dark view-menu mb-3 mb-md-0 btn_hover_5F695E">See More</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 nopadding">
+                <img class="img-fluid" src="img/index/c837a6-b12138462b31409aaf8029cf7a2dd7ed-mv2-1.png" />
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid ">
+        <div class="row my-1 flex-md-row-reverse">
+
+            <div
+                class="col-12 col-md-6 col-lg-8 text-center nopadding  d-flex flex-column align-items-center justify-content-center">
+                <div class="container text-start ">
+                    <div class="row">
+                        <div class="col offset-lg-2 ">
+                            <h1 class="group1-bestbite">Drink.</h1>
+                            <p>The Freshest Cup in Town</p>
+                            <p>
+                                offers a variety of expertly crafted coffees and teas, passionately made to
+                                enliven your day anytime.
+                            </p>
+                            <a href="menu.html">
+                                <button type="button" class="btn btn-outline-dark view-menu  mb-3 mb-md-0 btn_hover_5F695E">See More</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 nopadding">
+                <img class="img-fluid" src="img/index/c837a6-1c8f21588e024e4aa589012f541f7a3b-mv2-1.png" />
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row my-1">
+            <div
+                class="col-12 col-md-6 col-lg-8 text-center nopadding  d-flex flex-column align-items-center justify-content-center">
+                <div class="container text-start ">
+                    <div class="row">
+                        <div class="col offset-lg-1 ">
+                            <h1 class="group1-bestbite">Enjoy.</h1>
+                            <p>Make Yourself at Home</p>
+                            <p>
+                                offers a cozy atmosphere for a relaxing coffee break or meal, welcoming you to feel at
+                                home at any time.
+                            </p>
+                            <a href="about.html" class="btn btn-outline-dark view-menu mb-3 mb-md-0 btn_hover_5F695E">Visit Us</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div id="index-info" class="col-12 col-md-6 col-lg-4 nopadding  ">
+                <img class="img-fluid" src="img/index/c837a6-b12138462b31409aaf8029cf7a2dd7ed-mv2-1.png" />
+            </div>
+
+        </div>
+    </div>
+    
+    <div  class="container-fluid bg-beige-FBF3E8 py-5 ">
+        <div class="row text-center">
+            <div class="col-12 pb-md-3">
+                <h1 class="">Drop By for a Bite.</h1>
+            </div>
+            <div class="col-12 col-md-6">
+                <h3>Address</h3>
+                <p>106344 台北市忠孝東路三段一號</p>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <h3>Opening Hours</h3>
+                <p>Mon - Fri: 9am - 6pm<br>​​Saturday: 10am - 2pm<br>​Sunday: Closed</p>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="container-fluid">
+        <div class="row row-cols-md-5">
+            <div class="col-6 nopadding">
+                <img class="img-fluid" src="img/index/c837a6-901e74dd86954fe5acdec3ff08ee2d42-mv2-1.png" />
+
+            </div>
+            <div class="col-6 nopadding">
+                <img class="img-fluid" src="img/index/c837a6-528fac98ab7549999cdc047acf09e94d-mv2-1.png" />
+
+            </div>
+            <div class="col-6 nopadding">
+                <img class="img-fluid" src="img/index/c837a6-81d939f67f774d688ab6c00798633c93-mv2-1.png" />
+
+            </div>
+            <div class="col-6 nopadding">
+                <img class="img-fluid" src="img/index/c837a6-6d5b30895ef24c53ab446b93a107a6f0-mv2-1.png" />
+
+            </div>
+            <div class="col-12 nopadding">
+                <img class="img-fluid" src="img/index/c837a6-1b6492bb36aa454383353353445c3026-mv2-1.png" />
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- footer -->
+
+    <div class="container-fluid footer1 white">
+        <div class="row justify-content-around ">
+
+            <div class="col-12 col-md-4 nopadding my-md-5  my-3 text-center text-md-start">
+                <h4>Newsletter</h4>
+                <p>Stay up to date with all the latest from cafe</p>
+                <p class="m-0">Email</p>
+                <form id="footer_Newsletter_email" class="row g-1">
+                    <div class="col-7 col-md-8 offset-1 offset-md-0">
+                        <!-- <label for="inputPassword2" class="visually-hidden">Password</label> -->
+                        <!-- <input type="password" class="form-control" id="inputPassword2" placeholder="Password"> -->
+                        <input type="email" id="emailInput"  placeholder="Enter your email"
+                            class="input-email form-control textgrayplaceholder">
+                    </div>
+                    <div class="col-2 col-md-4 ">
+                        <button type="submit" id="submitBtn" class="join btn btn-outline-light ">Join</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 col-md-4 nopadding my-md-5 my-3  text-center text-md-start">
+                <h4>Talk to Us</h4>
+                <p class="m-0">Tel: 0965580712</p>
+                <p>t109360213@ntut.org.tw</p>
+                <p>106344 台北市忠孝東路三段一號</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer2 text-center">
+        <p class="nopadding">@2023 by jack</p>
+    </div>
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+
+
+</body>
+
+</html>

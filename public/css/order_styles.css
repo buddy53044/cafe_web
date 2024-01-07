@@ -1,0 +1,46 @@
+
+
+
+
+
+
+.order-img{
+  height: 100% !important; /* 设置固定的高度 */
+  object-fit: cover;
+  width: 100% !important; /* 宽度100% */
+  max-width: 100%; /* 最大宽度100%以确保在小屏幕上不会溢出 */
+}
+
+
+  
+  
+  /* 增加媒體查詢以適應小屏幕 */
+  /* @media (max-width: 768px) {
+
+    .modal-dialog-right {
+      right: 10px;
+    }
+  } */
+
+  @media (min-width: 768px) { /* 當屏幕寬度大於等於768px（md）時 */
+    .modal-dialog-right {
+      position: absolute;
+      right: 0 !important;
+      margin-right: 0 !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      /* background-color: red !important; */
+    }
+  }
+
+  @media (max-width: 767.98px) { /* Bootstrap 5 'md'断点的上一个像素 */
+
+  }
+  
+  
+  @media (max-width: 991.98px) { /* 這是Bootstrap 5中的 'lg' 斷點的上一個像素 */
+
+  }
+
+  
+
