@@ -10,6 +10,8 @@ const session = require('express-session');
 const cors = require('cors');
 const TempCart = require('./models/temp_cart'); // 请根据实际路径修改
 const Tempnote = require('./models/temp_note'); // 请根据实际路径修改
+var app = express();
+app.use(cors());
 
 
 // 连接到MongoDB数据库
@@ -47,7 +49,6 @@ var contactRouter = require('./routes/contact');
 var order_recordRouter = require('./routes/order_record');
 var temp_noteRouter = require('./routes/temp_note');
 
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -60,7 +61,6 @@ app.use(session({
   saveUninitialized: false
 }));
 
-app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
