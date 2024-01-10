@@ -73,7 +73,7 @@ $(document).ready(function () {
         const user = response.data.user;
         // 從用戶對象中提取id和address
         const userId = user._id;
-        const userName = user.username;
+        const userName = user.name;
         const userPhone = user.phone;
         const userEmail = user.email;
         const userAddress = user.address;  
