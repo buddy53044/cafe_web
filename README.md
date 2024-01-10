@@ -6,8 +6,6 @@ npm start
 
 menu edit remove
 
-
-add order note error
-
+test menu align-items-stretch
 
 https://youtu.be/PhUIS0gDu8Y
