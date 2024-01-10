@@ -13,7 +13,11 @@ const Tempnote = require('./models/temp_note'); // 请根据实际路径修改
 
 
 // 连接到MongoDB数据库
-mongoose.connect('mongodb://localhost:27017', {
+// mongoose.connect('mongodb://localhost:27017', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// });
+mongoose.connect('mongodb+srv://user:8FFa5aXWuxKFevfR@cluster0.wpjo9te.mongodb.net/', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
